@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:pos/accountroot.dart';
+import 'package:pos/addPurchase.dart';
+import 'package:pos/addStaff.dart';
+import 'package:pos/addproduct.dart';
+import 'package:pos/category.dart';
+import 'package:pos/closing.dart';
+import 'package:pos/closingreport.dart';
+import 'package:pos/customer.dart';
+import 'package:pos/home.dart';
+import 'package:pos/loginscreen.dart';
+import 'package:pos/payment.dart';
+import 'package:pos/printingpage.dart';
+import 'package:pos/product.dart';
+import 'package:pos/profile.dart';
+import 'package:pos/purchase.dart';
+import 'package:pos/receipt.dart';
+import 'package:pos/sales.dart';
+import 'package:pos/size.dart';
+import 'package:pos/staff.dart';
+import 'package:pos/stock.dart';
+import 'package:pos/stockreport.dart';
+import 'package:pos/subcategory.dart';
+import 'package:pos/suppliers.dart';
+import 'package:pos/transaction.dart';
+import 'package:pos/unit.dart';
+import 'account.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      builder: EasyLoading.init(),
+      routes: {
+        // '/': (context) => Profilepage(),
+        '/': (context) => LoginScreen(),
+        'home': (context) => Homepage(),
+        'sales': (context) => salespage(),
+        'product': (context) => Productpage(),
+        'suppiler': (context) => Supplierpage(),
+        'customer': (context) => Customerpage(),
+        'category': (context) => Categorypage(),
+        'sub_category': (context) => Subcategorypage(),
+        'size': (context) => Sizepage(),
+        'unit': (context) => Unitpage(),
+        'purchase': (context) => Purchasepage(),
+        'addpurchase': (context) => AddPurchase(),
+        'stock': (context) => Stockpage(),
+        'accountroot': (context) => Accountrootpage(),
+        'account': (context) => Accountpage(),
+        'payment': (context) => Paymentpage(),
+        'receipt': (context) => Receiptpage(),
+        'transaction': (context) => Transactionpage(),
+        'closing': (context) => closingPage(),
+        // 'closingreport': (context) => Closingreportpage(),
+        'closingreport': (context) => PrintingPage(),
+        'stockreport': (context) => StockReportpage(),
+        'staffpage': (context) => Staffpage(),
+        'add_staff': (context) => AddStaff(),
+        'profile': (context) => Profilepage(),
+        'print': (context) => PrintingPage(),
+      },
+    ),
+  );
+}
