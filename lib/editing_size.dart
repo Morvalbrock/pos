@@ -45,6 +45,7 @@ class _Editing_productState extends State<Editing_size> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(236, 133, 36, 1),
         title: Text(
           'Editing Size Details',
           style: TextStyle(color: Colors.white),

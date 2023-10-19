@@ -48,7 +48,7 @@ class _MyAppState extends State<Productpage> {
 
     EasyLoading.show(status: 'loading...');
     _productInfoDataSource = OrderInfoDataSource();
-    Timer(Duration(seconds: 5), () {
+    Timer(const Duration(seconds: 5), () {
       setState(() {
         _productInfoDataSource = OrderInfoDataSource();
       });

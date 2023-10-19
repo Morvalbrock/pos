@@ -13,7 +13,8 @@ class _View_productState extends State<View_unit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        backgroundColor: const Color.fromRGBO(236, 133, 36, 1),
+        title: const Text(
           'View Unit Details',
           style: TextStyle(color: Colors.white),
         ),
@@ -22,7 +23,7 @@ class _View_productState extends State<View_unit> {
         children: [
           Container(
             width: double.infinity,
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               top: 24.0,
             ),
             // alignment: Alignment.centerLeft,

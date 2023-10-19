@@ -46,6 +46,7 @@ class _Editing_productState extends State<Editing_supplier> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(236, 133, 36, 1),
         title: Text(
           'Editing Supplier Details',
           style: TextStyle(color: Colors.white),

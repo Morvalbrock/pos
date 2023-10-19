@@ -13,6 +13,7 @@ class _View_productState extends State<View_category> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(236, 133, 36, 1),
         title: Text(
           'View Category Details',
           style: TextStyle(color: Colors.white),

@@ -73,7 +73,8 @@ class _Editing_productState extends State<Editing_account> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        backgroundColor: const Color.fromRGBO(236, 133, 36, 1),
+        title: const Text(
           ' Editing Account Details',
           style: TextStyle(color: Colors.white),
         ),

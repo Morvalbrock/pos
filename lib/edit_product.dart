@@ -95,10 +95,11 @@ class _Editing_productState extends State<Editing_product> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          backgroundColor: Color.fromRGBO(236, 133, 36, 1),
           title: Text(
-        'Edit Product Details',
-        style: TextStyle(color: Colors.white),
-      )),
+            'Edit Product Details',
+            style: TextStyle(color: Colors.white),
+          )),
       body: Form(
         key: formKey1,
         child: Padding(

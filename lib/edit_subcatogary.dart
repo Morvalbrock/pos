@@ -88,6 +88,7 @@ class _Editing_productState extends State<Editing_subcategory> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(236, 133, 36, 1),
         title: Text(
           'Editing Subcatogary Details',
           style: TextStyle(color: Colors.white),
