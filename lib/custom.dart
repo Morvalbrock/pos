@@ -764,7 +764,9 @@ Widget Customdrawer(context) {
               padding: const EdgeInsets.only(left: 30.0),
               child: ListTile(
                 title: Text("Invoice Report"),
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushNamed("invicereport");
+                },
               ),
             ),
             Padding(

@@ -69,6 +69,7 @@ class _AddAccountState extends State<AddAccount> {
     }
   }
 
+  @override
   void initState() {
     super.initState();
     EasyLoading.show(status: 'loading...');
@@ -79,7 +80,7 @@ class _AddAccountState extends State<AddAccount> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
+          title: const Text(
         'Add Account',
         style: TextStyle(color: Colors.white),
       )),
@@ -94,10 +95,11 @@ class _AddAccountState extends State<AddAccount> {
                 Container(
                   width: MediaQuery.of(context).size.width * 0.60,
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             'Account Root:',
                             style: TextStyle(fontSize: 18.0),
                           ),
@@ -292,7 +294,6 @@ class _AddAccountState extends State<AddAccount> {
                         ],
                       ),
                     ],
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   ),
                 ),
               ],

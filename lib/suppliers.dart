@@ -338,7 +338,7 @@ class _MyAppState extends State<Supplierpage> {
                                                                                 onPressed: () async {
                                                                                   Navigator.pop(context);
                                                                                   EasyLoading.show(status: 'loading...');
-                                                                                  dynamic rs = await deletequery('DELETE FROM `tbl_supplier` WHERE `id` =' + fetchedData["id"].toString());
+                                                                                  dynamic rs = await deletequery('DELETE FROM `tbl_supplier` WHERE `id` =${fetchedData["id"]}');
 
                                                                                   if (rs == true) {
                                                                                     Navigator.pop(context);

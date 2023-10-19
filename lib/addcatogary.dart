@@ -33,7 +33,7 @@ class _AddCatogaryState extends State<AddCatogary> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
+          title: const Text(
         'Add Catogary',
         style: TextStyle(color: Colors.white),
       )),
@@ -48,14 +48,15 @@ class _AddCatogaryState extends State<AddCatogary> {
                 Container(
                   width: MediaQuery.of(context).size.width * 0.60,
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             'Category Name:',
                             style: TextStyle(fontSize: 18.0),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Container(
                             width: MediaQuery.of(context).size.width * 0.30,
                             child: TextFormField(
@@ -68,7 +69,7 @@ class _AddCatogaryState extends State<AddCatogary> {
                               },
                               controller: _controllercatogaryname,
                               keyboardType: TextInputType.text,
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                   focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                           color: Color.fromARGB(
@@ -84,18 +85,18 @@ class _AddCatogaryState extends State<AddCatogary> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15.0,
                       ),
                       Row(
                         children: [
                           Container(
-                            child: Text(
+                            child: const Text(
                               'Category Short:',
                               style: TextStyle(fontSize: 18.0),
                             ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Container(
                               width: MediaQuery.of(context).size.width * 0.30,
                               child: TextFormField(
@@ -106,7 +107,7 @@ class _AddCatogaryState extends State<AddCatogary> {
                                   }
                                   return null;
                                 },
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   filled: true,
                                   fillColor: Colors.white,
                                   focusedBorder: OutlineInputBorder(
@@ -125,16 +126,14 @@ class _AddCatogaryState extends State<AddCatogary> {
                               )),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15.0,
                       ),
                       Row(
                         children: [
-                          Container(
-                            child: Text(
-                              'Status:',
-                              style: TextStyle(fontSize: 18.0),
-                            ),
+                          const Text(
+                            'Status:',
+                            style: TextStyle(fontSize: 18.0),
                           ),
                           Spacer(),
                           Container(
@@ -248,7 +247,6 @@ class _AddCatogaryState extends State<AddCatogary> {
                         ],
                       ),
                     ],
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   ),
                 ),
               ],

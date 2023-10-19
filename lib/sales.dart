@@ -1055,7 +1055,7 @@ class _MyAppState extends State<salespage> {
                                                     builder:
                                                         (BuildContext context) {
                                                       return AlertDialog(
-                                                        title: Container(
+                                                        title: SizedBox(
                                                           width: MediaQuery.of(
                                                                       context)
                                                                   .size
@@ -1070,9 +1070,9 @@ class _MyAppState extends State<salespage> {
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceAround,
+                                                            // mainAxisAlignment:
+                                                            //     MainAxisAlignment
+                                                            //         .spaceAround,
                                                             children: [
                                                               const Row(
                                                                 children: [
@@ -1095,11 +1095,13 @@ class _MyAppState extends State<salespage> {
                                                           ),
                                                         ),
                                                         content: Container(
+                                                          alignment: Alignment
+                                                              .topCenter,
                                                           width: MediaQuery.of(
                                                                       context)
                                                                   .size
                                                                   .width *
-                                                              0.65,
+                                                              0.68,
                                                           height: MediaQuery.of(
                                                                       context)
                                                                   .size

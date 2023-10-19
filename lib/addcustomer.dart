@@ -13,7 +13,7 @@ TextEditingController _controllercusaddmobile = TextEditingController();
 TextEditingController _controllercusaddemail = TextEditingController();
 TextEditingController _controllercusadddob = TextEditingController();
 TextEditingController _controllercusadddetails = TextEditingController();
-TextEditingController _controllercusdate = TextEditingController();
+// TextEditingController _controllercusdate = TextEditingController();
 
 class AddCustomer extends StatefulWidget {
   const AddCustomer({
@@ -61,7 +61,7 @@ class _AddCustomerState extends State<AddCustomer> {
             alignment: Alignment.center,
             child: Column(
               children: [
-                Container(
+                SizedBox(
                   width: MediaQuery.of(context).size.width * 0.60,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -73,7 +73,7 @@ class _AddCustomerState extends State<AddCustomer> {
                             style: TextStyle(fontSize: 18.0),
                           ),
                           const Spacer(),
-                          Container(
+                          SizedBox(
                             width: MediaQuery.of(context).size.width * 0.30,
                             child: TextFormField(
                               textAlignVertical: TextAlignVertical.center,
@@ -106,14 +106,12 @@ class _AddCustomerState extends State<AddCustomer> {
                       ),
                       Row(
                         children: [
-                          Container(
-                            child: const Text(
-                              'Customer Address:',
-                              style: TextStyle(fontSize: 18.0),
-                            ),
+                          const Text(
+                            'Customer Address:',
+                            style: TextStyle(fontSize: 18.0),
                           ),
                           const Spacer(),
-                          Container(
+                          SizedBox(
                               width: MediaQuery.of(context).size.width * 0.30,
                               child: TextFormField(
                                 controller: _controllercusaddaddress,
@@ -147,14 +145,12 @@ class _AddCustomerState extends State<AddCustomer> {
                       ),
                       Row(
                         children: [
-                          Container(
-                            child: const Text(
-                              'Customer Mobile:',
-                              style: TextStyle(fontSize: 18.0),
-                            ),
+                          const Text(
+                            'Customer Mobile:',
+                            style: TextStyle(fontSize: 18.0),
                           ),
                           const Spacer(),
-                          Container(
+                          SizedBox(
                               width: MediaQuery.of(context).size.width * 0.30,
                               child: TextFormField(
                                 controller: _controllercusaddmobile,
@@ -186,14 +182,12 @@ class _AddCustomerState extends State<AddCustomer> {
                       ),
                       Row(
                         children: [
-                          Container(
-                            child: const Text(
-                              'Customer Email:',
-                              style: TextStyle(fontSize: 18.0),
-                            ),
+                          const Text(
+                            'Customer Email:',
+                            style: TextStyle(fontSize: 18.0),
                           ),
                           const Spacer(),
-                          Container(
+                          SizedBox(
                               width: MediaQuery.of(context).size.width * 0.30,
                               child: TextFormField(
                                 controller: _controllercusaddemail,
@@ -219,14 +213,12 @@ class _AddCustomerState extends State<AddCustomer> {
                       ),
                       Row(
                         children: [
-                          Container(
-                            child: const Text(
-                              'Customer DOB:',
-                              style: TextStyle(fontSize: 18.0),
-                            ),
+                          const Text(
+                            'Customer DOB:',
+                            style: TextStyle(fontSize: 18.0),
                           ),
                           const Spacer(),
-                          Container(
+                          SizedBox(
                               width: MediaQuery.of(context).size.width * 0.30,
                               child: TextFormField(
                                 controller: _controllercusadddob,
@@ -255,14 +247,12 @@ class _AddCustomerState extends State<AddCustomer> {
                       ),
                       Row(
                         children: [
-                          Container(
-                            child: const Text(
-                              'Customer Details:',
-                              style: TextStyle(fontSize: 18.0),
-                            ),
+                          const Text(
+                            'Customer Details:',
+                            style: TextStyle(fontSize: 18.0),
                           ),
                           const Spacer(),
-                          Container(
+                          SizedBox(
                               width: MediaQuery.of(context).size.width * 0.30,
                               child: TextFormField(
                                 controller: _controllercusadddetails,
@@ -290,33 +280,33 @@ class _AddCustomerState extends State<AddCustomer> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(right: 30, top: 20),
-                            child: Container(
+                            child: SizedBox(
                               height: 40.0,
                               width: 100.0,
                               child: ElevatedButton(
                                 onPressed: () async {
                                   if (formKeyss13.currentState!.validate()) {
                                     List maxid = [];
-                                    var max_id = '';
+                                    var maxId = '';
                                     final SharedPreferences prefs =
                                         await SharedPreferences.getInstance();
-                                    var comp_id = prefs.getString('comp_id');
+                                    var compId = prefs.getString('comp_id');
                                     List<dynamic> data = await SelectionQry(
-                                        'SELECT max(id) as maxid FROM `tbl_customer` where comp_id="${comp_id}"');
+                                        'SELECT max(id) as maxid FROM `tbl_customer` where comp_id="$compId"');
 
                                     maxid.clear();
 
                                     for (var row in data) {
                                       setState(() {
-                                        print(row['maxid']);
-                                        max_id = (row['maxid'] + 1).toString();
+                                        // print(row['maxid']);
+                                        maxId = (row['maxid'] + 1).toString();
                                       });
                                     }
 
-                                    var cusId = "CUS${max_id.padLeft(5, '0')}";
+                                    var cusId = "CUS${maxId.padLeft(5, '0')}";
 
                                     dynamic rs = await insertquery(
-                                        "INSERT INTO `tbl_customer`(  `comp_id`, `cus_id`,`cus_name`, `cus_address`, `cus_mobile`, `cus_email`, `cus_dob`, `cus_details`) VALUES ('${comp_id.toString()}','${cusId.toString()}','${_controllercusaddname.text}','${_controllercusaddaddress.text}','${_controllercusaddmobile.text}','${_controllercusaddemail.text}','${_controllercusadddob.text}','${_controllercusadddetails.text}')");
+                                        "INSERT INTO `tbl_customer`(  `comp_id`, `cus_id`,`cus_name`, `cus_address`, `cus_mobile`, `cus_email`, `cus_dob`, `cus_details`) VALUES ('${compId.toString()}','${cusId.toString()}','${_controllercusaddname.text}','${_controllercusaddaddress.text}','${_controllercusaddmobile.text}','${_controllercusaddemail.text}','${_controllercusadddob.text}','${_controllercusadddetails.text}')");
 
                                     if (rs == true) {
                                       // ignore: use_build_context_synchronously
@@ -344,10 +334,10 @@ class _AddCustomerState extends State<AddCustomer> {
                                     }
                                   }
                                 },
-                                child: const Text('Save'),
                                 style: ElevatedButton.styleFrom(
-                                    primary:
+                                    backgroundColor:
                                         const Color.fromARGB(255, 94, 214, 98)),
+                                child: const Text('Save'),
                               ),
                             ),
                           ),
@@ -356,7 +346,7 @@ class _AddCustomerState extends State<AddCustomer> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(right: 30, top: 20),
-                            child: Container(
+                            child: SizedBox(
                               height: 40.0,
                               width: 100.0,
                               child: ElevatedButton(
@@ -381,16 +371,20 @@ class _AddCustomerState extends State<AddCustomer> {
   }
 }
 
+// ignore: non_constant_identifier_names
 String? Productname(String? value) {
-  if (value!.length < 3)
+  if (value!.length < 3) {
     return 'Product Name must be enter';
-  else
+  } else {
     return null;
+  }
 }
 
+// ignore: non_constant_identifier_names
 String? Productdetails(String? value) {
-  if (value!.length < 3)
+  if (value!.length < 3) {
     return 'Product Productdetails must be enter';
-  else
+  } else {
     return null;
+  }
 }
