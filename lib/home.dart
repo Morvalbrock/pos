@@ -121,8 +121,8 @@ class _HomepageState extends State<Homepage> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 10.0,
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.01,
             ),
             Row(
               children: [
@@ -131,7 +131,7 @@ class _HomepageState extends State<Homepage> {
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.24,
                     padding: const EdgeInsets.only(top: 10.0, left: 20.0),
-                    height: 100.0,
+                    height: MediaQuery.of(context).size.height * 0.12,
                     color: Colors.white,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -140,7 +140,7 @@ class _HomepageState extends State<Homepage> {
                           children: [
                             const Icon(
                               Icons.monitor_outlined,
-                              size: 40.0,
+                              size: 35.0,
                             ),
                             const Spacer(),
                             Padding(
@@ -148,7 +148,7 @@ class _HomepageState extends State<Homepage> {
                               child: Text(
                                 "₹$total_Revenue",
                                 style: const TextStyle(
-                                    fontSize: 18.0,
+                                    fontSize: 16.0,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.red),
                               ),
@@ -160,7 +160,7 @@ class _HomepageState extends State<Homepage> {
                         ),
                         const Text(
                           "TODAY REVENUE",
-                          style: TextStyle(fontSize: 18.0),
+                          style: TextStyle(fontSize: 16.0),
                         ),
                       ],
                     ),
@@ -171,7 +171,7 @@ class _HomepageState extends State<Homepage> {
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.24,
                     padding: const EdgeInsets.only(top: 10.0, left: 20.0),
-                    height: 100.0,
+                    height: MediaQuery.of(context).size.height * 0.12,
                     color: Colors.white,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -180,7 +180,7 @@ class _HomepageState extends State<Homepage> {
                           children: [
                             const Icon(
                               Icons.assessment_outlined,
-                              size: 40.0,
+                              size: 35.0,
                             ),
                             const Spacer(),
                             Padding(
@@ -188,7 +188,7 @@ class _HomepageState extends State<Homepage> {
                               child: Text(
                                 "₹$overall_Revenue",
                                 style: const TextStyle(
-                                    fontSize: 18.0,
+                                    fontSize: 16.0,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.red),
                               ),
@@ -200,7 +200,7 @@ class _HomepageState extends State<Homepage> {
                         ),
                         const Text(
                           "OVERALL REVENUE",
-                          style: TextStyle(fontSize: 18.0),
+                          style: TextStyle(fontSize: 16.0),
                         ),
                       ],
                     ),
@@ -211,7 +211,7 @@ class _HomepageState extends State<Homepage> {
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.24,
                     padding: const EdgeInsets.only(top: 10.0, left: 20.0),
-                    height: 100.0,
+                    height: MediaQuery.of(context).size.height * 0.12,
                     color: Colors.white,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -220,7 +220,7 @@ class _HomepageState extends State<Homepage> {
                           children: [
                             const Icon(
                               Icons.file_copy_sharp,
-                              size: 40.0,
+                              size: 35.0,
                             ),
                             const Spacer(),
                             Padding(
@@ -228,7 +228,7 @@ class _HomepageState extends State<Homepage> {
                               child: Text(
                                 today_Invice,
                                 style: const TextStyle(
-                                    fontSize: 18.0,
+                                    fontSize: 16.0,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.red),
                               ),
@@ -240,7 +240,7 @@ class _HomepageState extends State<Homepage> {
                         ),
                         const Text(
                           "TODAY INVOICES",
-                          style: TextStyle(fontSize: 18.0),
+                          style: TextStyle(fontSize: 16.0),
                         ),
                       ],
                     ),
@@ -251,7 +251,7 @@ class _HomepageState extends State<Homepage> {
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.24,
                     padding: const EdgeInsets.only(top: 10.0, left: 20.0),
-                    height: 100.0,
+                    height: MediaQuery.of(context).size.height * 0.12,
                     color: Colors.white,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -260,7 +260,7 @@ class _HomepageState extends State<Homepage> {
                           children: [
                             const Icon(
                               Icons.shopping_bag_outlined,
-                              size: 40.0,
+                              size: 35.0,
                             ),
                             const Spacer(),
                             Padding(
@@ -268,7 +268,7 @@ class _HomepageState extends State<Homepage> {
                               child: Text(
                                 overall_Invice,
                                 style: const TextStyle(
-                                    fontSize: 18.0,
+                                    fontSize: 16.0,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.red),
                               ),
@@ -280,7 +280,7 @@ class _HomepageState extends State<Homepage> {
                         ),
                         const Text(
                           "OVERALL INVOICES",
-                          style: TextStyle(fontSize: 18.0),
+                          style: TextStyle(fontSize: 16.0),
                         ),
                       ],
                     ),
@@ -288,8 +288,8 @@ class _HomepageState extends State<Homepage> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 20.0,
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -310,7 +310,7 @@ class _HomepageState extends State<Homepage> {
                       Container(
                         padding: const EdgeInsets.only(bottom: 5.0),
                         color: Colors.white,
-                        height: MediaQuery.of(context).size.width * 0.35,
+                        height: MediaQuery.of(context).size.width * 0.31,
                         width: MediaQuery.of(context).size.width * 0.58,
                         child: MyBarGraph(
                           yearSummar: yearlySummary,
@@ -329,7 +329,7 @@ class _HomepageState extends State<Homepage> {
                   elevation: 2.0,
                   child: Container(
                     color: Colors.white,
-                    height: 566.0,
+                    height: MediaQuery.of(context).size.width * 0.36,
                     width: MediaQuery.of(context).size.width * 0.38,
                     child: My_Piechart(),
                   ),
