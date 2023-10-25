@@ -93,7 +93,7 @@ class _PaymentpageState extends State<Paymentpage> {
         child: Container(
           color: Colors.white,
           width: double.infinity,
-          height: 550.0,
+          height: MediaQuery.of(context).size.height * 20.0,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -129,7 +129,7 @@ class _PaymentpageState extends State<Paymentpage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(right: 5.0),
-                        child: Container(
+                        child: SizedBox(
                             width: 320,
                             height: 40.0,
                             child: TextField(
@@ -162,7 +162,7 @@ class _PaymentpageState extends State<Paymentpage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 40.0),
-                        child: Container(
+                        child: SizedBox(
                             width: 300,
                             height: 80.0,
                             child: TextField(
@@ -188,7 +188,7 @@ class _PaymentpageState extends State<Paymentpage> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50.0,
               ),
               Row(
@@ -205,7 +205,7 @@ class _PaymentpageState extends State<Paymentpage> {
                       SizedBox(
                         width: 20.0,
                       ),
-                      Container(
+                      SizedBox(
                         height: 40,
                         width: MediaQuery.of(context).size.width * 0.22,
                         child: DropdownButtonHideUnderline(
@@ -244,7 +244,7 @@ class _PaymentpageState extends State<Paymentpage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 4.0),
-                        child: Container(
+                        child: SizedBox(
                           height: 40,
                           width: MediaQuery.of(context).size.width * 0.22,
                           child: DropdownButtonHideUnderline(
@@ -274,76 +274,187 @@ class _PaymentpageState extends State<Paymentpage> {
                 ],
               ),
               SizedBox(
-                height: 80.0,
+                height: MediaQuery.of(context).size.height * 0.08,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              Column(
                 children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Container(
-                        child: Text('Transaction Mode'),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.05,
+                          ),
+                          const Text('Transaction Mode'),
+                          const SizedBox(
+                            width: 25.0,
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.04,
+                          ),
+                          SizedBox(
+                            height: 40,
+                            width: MediaQuery.of(context).size.width * 0.22,
+                            child: DropdownButtonHideUnderline(
+                              child: GFDropdown(
+                                borderRadius: BorderRadius.circular(5),
+                                border: const BorderSide(
+                                    color: Colors.black12, width: 1),
+                                dropdownButtonColor: Colors.white,
+                                value: dropdownValue1,
+                                onChanged: (newValue) {
+                                  setState(() {
+                                    dropdownValue1 = newValue;
+                                  });
+                                },
+                                items: [
+                                  'Selected Mode',
+                                  'CASH',
+                                  'CHEQUE',
+                                ]
+                                    .map((value) => DropdownMenuItem(
+                                          value: value,
+                                          child: Text(value),
+                                        ))
+                                    .toList(),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 20.0,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.05,
+                          ),
+                          Text('Payment Amount'),
+                          SizedBox(
+                            width: 20.0,
+                          ),
+                          SizedBox(
+                              width: 300,
+                              height: 40.0,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color.fromARGB(
+                                                255, 243, 234, 234))),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Color.fromARGB(
+                                              255, 243, 234, 234)),
+                                    ),
+                                    hintText: 'Payment Amount',
+                                    hintStyle: TextStyle(fontSize: 15)),
+                              )),
+                        ],
                       ),
                       SizedBox(
-                        width: 20.0,
+                        height: 20.0,
                       ),
-                      Container(
-                        height: 40,
-                        width: MediaQuery.of(context).size.width * 0.22,
-                        child: DropdownButtonHideUnderline(
-                          child: GFDropdown(
-                            borderRadius: BorderRadius.circular(5),
-                            border: const BorderSide(
-                                color: Colors.black12, width: 1),
-                            dropdownButtonColor: Colors.white,
-                            value: dropdownValue1,
-                            onChanged: (newValue) {
-                              setState(() {
-                                dropdownValue1 = newValue;
-                              });
-                            },
-                            items: [
-                              'Selected Mode',
-                              'CASH',
-                              'CHEQUE',
-                            ]
-                                .map((value) => DropdownMenuItem(
-                                      value: value,
-                                      child: Text(value),
-                                    ))
-                                .toList(),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  if (dropdownValue1 == 'CHEQUE')
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: Row(
+                            children: [
+                              Text('Cheque No'),
+                              SizedBox(
+                                width: 15.0,
+                              ),
+                              SizedBox(
+                                width: 180.0,
+                                height: 40.0,
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                      focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Color.fromARGB(
+                                                  255, 243, 234, 234))),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color.fromARGB(
+                                                255, 243, 234, 234)),
+                                      ),
+                                      hintText: 'Cheque No',
+                                      hintStyle: TextStyle(fontSize: 15)),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        child: Text('Payment Amount'),
-                      ),
-                      SizedBox(
-                        width: 20.0,
-                      ),
-                      Container(
-                          width: 300,
-                          height: 40.0,
-                          child: TextField(
-                            decoration: InputDecoration(
-                                focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Color.fromARGB(
-                                            255, 243, 234, 234))),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color:
-                                          Color.fromARGB(255, 243, 234, 234)),
-                                ),
-                                hintText: 'Payment Amount',
-                                hintStyle: TextStyle(fontSize: 15)),
-                          )),
-                    ],
-                  ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Row(
+                          children: [
+                            Text('Cheque Date'),
+                            SizedBox(
+                              width: 15.0,
+                            ),
+                            SizedBox(
+                              width: 180.0,
+                              height: 40.0,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color.fromARGB(
+                                                255, 243, 234, 234))),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Color.fromARGB(
+                                              255, 243, 234, 234)),
+                                    ),
+                                    hintText: 'yyyy-mm-dd',
+                                    hintStyle: TextStyle(fontSize: 15)),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Row(
+                          children: [
+                            Text("Bank Name"),
+                            SizedBox(
+                              width: 15.0,
+                            ),
+                            SizedBox(
+                              width: 180.0,
+                              height: 40.0,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color.fromARGB(
+                                                255, 243, 234, 234))),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Color.fromARGB(
+                                              255, 243, 234, 234)),
+                                    ),
+                                    hintText: 'Bank Name',
+                                    hintStyle: TextStyle(fontSize: 15)),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                 ],
               ),
               SizedBox(

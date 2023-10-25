@@ -178,7 +178,7 @@ class _MyAppState extends State<Unitpage> {
                     padding: const EdgeInsets.all(10.0),
                     child: SingleChildScrollView(
                       child: Container(
-                        height: MediaQuery.of(context).size.height * 0.72,
+                        height: MediaQuery.of(context).size.height * 0.62,
                         child: SizedBox(
                             height: constraint.maxHeight - dataPagerHeight,
                             width: constraint.maxWidth,

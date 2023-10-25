@@ -21,7 +21,9 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   dynamic res = [];
 
+  @override
   void initState() {
+    super.initState();
     setState(() {
       username.text = '9043889370';
       password.text = '123';
@@ -63,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ]);
       });
     }
-    print(product);
+
     if (product.isNotEmpty) {
       await prefs.setInt('id', product[0]);
       await prefs.setString('comp_id', product[1]);
@@ -84,62 +86,60 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            color: Color.fromRGBO(236, 133, 36, 1),
-            padding: EdgeInsets.only(bottom: 70.0, right: 20),
+            color: const Color.fromRGBO(236, 133, 36, 1),
+            padding: const EdgeInsets.only(bottom: 70.0, right: 20),
             // padding: EdgeInsets.only(right: 30.0),
-            child: Image.network(
-              'https://evolve.ie/wp-content/uploads/2015/09/big-data-analytics-portrait.jpg',
+            child: Image.asset(
+              'assets/images/loginpage.jpg',
               height: double.infinity,
-              width: 800,
+              width: MediaQuery.of(context).size.width * 0.50,
             ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: 200,
+                height: MediaQuery.of(context).size.height * 0.20,
               ),
-              Container(
-                width: 400,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    top: 25,
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Login to your Account",
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(21, 83, 120, 1),
-                      ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.30,
+                child: const Center(
+                  child: Text(
+                    "Login to your Account",
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(21, 83, 120, 1),
                     ),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 70.0),
-                    child: Text(
-                      'User Name',
-                      style: TextStyle(
-                        fontSize: 15,
-                      ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.10,
+                  ),
+                  const Text(
+                    'User Name',
+                    style: TextStyle(
+                      fontSize: 15,
                     ),
                   ),
-                  Container(
-                    width: 300.0,
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.02,
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.20,
                     height: 40.0,
-                    padding: EdgeInsets.only(left: 30),
                     child: TextField(
                       controller: username,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Color.fromARGB(255, 243, 234, 234))),
@@ -153,27 +153,29 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 70.0),
-                    child: Text(
-                      'Password',
-                      style: TextStyle(
-                        fontSize: 15,
-                      ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.10,
+                  ),
+                  const Text(
+                    'Password',
+                    style: TextStyle(
+                      fontSize: 15,
                     ),
                   ),
-                  Container(
-                    width: 300.0,
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.03,
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.20,
                     height: 40.0,
-                    padding: EdgeInsets.only(left: 30.0),
                     child: TextField(
                       controller: password,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Color.fromARGB(255, 243, 234, 234))),
@@ -188,12 +190,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30.0,
               ),
               Container(
                 alignment: Alignment.centerRight,
-                width: 440.0,
+                width: MediaQuery.of(context).size.width * 0.15,
                 child: ElevatedButton(
                   onPressed: () {
                     EasyLoading.show(status: 'loading...');
@@ -215,27 +217,27 @@ class _LoginScreenState extends State<LoginScreen> {
                       );
                     }
                   },
-                  child: Text('Login'),
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(120, 50),
-                    backgroundColor: Color.fromRGBO(236, 133, 36, 1),
+                    minimumSize: const Size(120, 50),
+                    backgroundColor: const Color.fromRGBO(236, 133, 36, 1),
                   ),
+                  child: const Text('Login'),
                 ),
               ),
+              SizedBox(height: MediaQuery.of(context).size.width * 0.10),
               Row(
                 children: [
                   Container(
-                      height: 300,
+                      width: MediaQuery.of(context).size.width * 0.35,
                       alignment: Alignment.bottomCenter,
-                      child: Text(
+                      child: const Text(
                           '© 2023 Searchsoft Technologies by searchsoft.in')),
                 ],
               ),
             ],
           ),
-          SizedBox(width: 70.0),
+          const SizedBox(width: 70.0),
         ],
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
       ),
     );
   }

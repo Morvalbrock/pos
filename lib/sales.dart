@@ -13,9 +13,10 @@ import 'package:pos/productpop.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 import 'stockpop.dart';
-import 'custom.dart';
+
 import 'helper/connection.dart';
-import 'package:pos/productpop.dart';
+
+import 'package:syncfusion_flutter_core/theme.dart';
 
 // import 'package:windows_project/loginscreen.dart';
 TextEditingController _controller = TextEditingController();
@@ -469,8 +470,9 @@ class _MyAppState extends State<salespage> {
                                 ],
                               ),
                               content: Container(
-                                width: 500,
-                                height: 400,
+                                width: MediaQuery.of(context).size.width * 0.32,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.50,
                                 child: Column(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
@@ -706,7 +708,7 @@ class _MyAppState extends State<salespage> {
                                           padding: const EdgeInsets.only(
                                               right: 30, top: 20),
                                           child: Container(
-                                            height: 50.0,
+                                            height: 40.0,
                                             width: 100.0,
                                             child: ElevatedButton(
                                               onPressed: () async {
@@ -783,7 +785,7 @@ class _MyAppState extends State<salespage> {
                                           padding: const EdgeInsets.only(
                                               right: 30, top: 20),
                                           child: Container(
-                                            height: 50.0,
+                                            height: 40.0,
                                             width: 100.0,
                                             child: ElevatedButton(
                                               onPressed: () {
@@ -812,7 +814,7 @@ class _MyAppState extends State<salespage> {
                         child: Column(
                           children: [
                             SizedBox(
-                                width: 280,
+                                width: MediaQuery.of(context).size.width * 0.19,
                                 child: DropdownTextSearch(
                                   noItemFoundText: "Invalid Search",
                                   controller: _cusserarchcontroller,
@@ -852,22 +854,16 @@ class _MyAppState extends State<salespage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 0),
-                  child: Text(
-                    cus_name,
-                    style: const TextStyle(color: Colors.black, fontSize: 20),
-                  ),
+                Text(
+                  cus_name,
+                  style: const TextStyle(color: Colors.black, fontSize: 18),
                 ),
                 const SizedBox(
                   width: 40.0,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 0),
-                  child: Text(
-                    cus_mobile,
-                    style: const TextStyle(color: Colors.black, fontSize: 20),
-                  ),
+                Text(
+                  cus_mobile,
+                  style: const TextStyle(color: Colors.black, fontSize: 18),
                 )
               ],
             ),
@@ -888,7 +884,7 @@ class _MyAppState extends State<salespage> {
               ],
             ),
             Container(
-                width: 250.0,
+                width: MediaQuery.of(context).size.width * 0.19,
                 padding: const EdgeInsets.only(right: 50, top: 10, bottom: 10),
                 child: TextField(
                   focusNode: myList2,
@@ -907,23 +903,18 @@ class _MyAppState extends State<salespage> {
                       hintText: 'DD-MM-YYYY',
                       hintStyle: TextStyle(fontSize: 15)),
                 )),
-            Row(
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.login_outlined),
+            TextButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.login_outlined, color: Colors.black),
+              label: const Text(
+                'Logout',
+                style: TextStyle(
                   color: Colors.black,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
                 ),
-                const Text(
-                  'Logout',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                ),
-              ],
+              ),
             ),
           ],
         ),
@@ -1065,7 +1056,7 @@ class _MyAppState extends State<salespage> {
                                                                       context)
                                                                   .size
                                                                   .height *
-                                                              0.15,
+                                                              0.05,
                                                           child: Row(
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
@@ -1075,6 +1066,9 @@ class _MyAppState extends State<salespage> {
                                                             //         .spaceAround,
                                                             children: [
                                                               const Row(
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
                                                                 children: [
                                                                   Text(
                                                                     'Add Products/Goods',
@@ -1106,379 +1100,447 @@ class _MyAppState extends State<salespage> {
                                                                       context)
                                                                   .size
                                                                   .height *
-                                                              0.20,
-                                                          child: SfDataGrid(
-                                                            source:
-                                                                stockDataSource,
-                                                            columnWidthMode:
-                                                                ColumnWidthMode
-                                                                    .fill,
-                                                            highlightRowOnHover:
-                                                                true,
-                                                            rowHeight: 50.0,
-                                                            onCellTap:
-                                                                (details) {
-                                                              int selectedRowIndex =
-                                                                  details.rowColumnIndex
-                                                                          .rowIndex -
-                                                                      1;
-                                                              var row = stockDataSource
-                                                                  .effectiveRows
-                                                                  .elementAt(
-                                                                      selectedRowIndex);
-                                                              // List<ProductInfo>
+                                                              0.18,
+                                                          child:
+                                                              SfDataGridTheme(
+                                                            data:
+                                                                SfDataGridThemeData(
+                                                              headerColor:
+                                                                  const Color
+                                                                      .fromRGBO(
+                                                                      21,
+                                                                      83,
+                                                                      120,
+                                                                      1),
+                                                              rowHoverColor:
+                                                                  const Color
+                                                                      .fromRGBO(
+                                                                      166,
+                                                                      216,
+                                                                      245,
+                                                                      1),
+                                                            ),
+                                                            child: SfDataGrid(
+                                                              source:
+                                                                  stockDataSource,
+                                                              columnWidthMode:
+                                                                  ColumnWidthMode
+                                                                      .fill,
+                                                              highlightRowOnHover:
+                                                                  true,
+                                                              rowHeight: 50.0,
+                                                              onCellTap:
+                                                                  (details) {
+                                                                int selectedRowIndex =
+                                                                    details.rowColumnIndex
+                                                                            .rowIndex -
+                                                                        1;
+                                                                var row = stockDataSource
+                                                                    .effectiveRows
+                                                                    .elementAt(
+                                                                        selectedRowIndex);
+                                                                // List<ProductInfo>
 
-                                                              //     product = [];
-                                                              dynamic inc =
-                                                                  (product.length) +
-                                                                      1;
-                                                              dynamic disc =
-                                                                  (product.length) +
-                                                                      1;
-                                                              dynamic disc_per =
-                                                                  (product.length) +
-                                                                      1;
-                                                              dynamic amount =
-                                                                  (product.length) +
-                                                                      1;
-                                                              dynamic total =
-                                                                  (product.length) +
-                                                                      1;
-                                                              ProductInfo list =
-                                                                  ProductInfo(
-                                                                row
-                                                                    .getCells()[
-                                                                        0]
-                                                                    .value,
-                                                                row
-                                                                    .getCells()[
-                                                                        1]
-                                                                    .value,
-                                                                row
-                                                                    .getCells()[
-                                                                        2]
-                                                                    .value,
-                                                                row
-                                                                    .getCells()[
-                                                                        3]
-                                                                    .value,
-                                                                row
-                                                                    .getCells()[
-                                                                        4]
-                                                                    .value,
-                                                                row
-                                                                    .getCells()[
-                                                                        5]
-                                                                    .value,
-                                                                row
-                                                                    .getCells()[
-                                                                        6]
-                                                                    .value,
-                                                                row
-                                                                    .getCells()[
-                                                                        7]
-                                                                    .value,
-                                                                row
-                                                                    .getCells()[
-                                                                        8]
-                                                                    .value,
-                                                                row
-                                                                    .getCells()[
-                                                                        9]
-                                                                    .value,
-                                                                row
-                                                                    .getCells()[
-                                                                        10]
-                                                                    .value,
-                                                                row
-                                                                    .getCells()[
-                                                                        11]
-                                                                    .value,
-                                                                row
-                                                                    .getCells()[
-                                                                        12]
-                                                                    .value,
-                                                                row
-                                                                    .getCells()[
-                                                                        13]
-                                                                    .value,
-                                                                row
-                                                                    .getCells()[
-                                                                        14]
-                                                                    .value,
-                                                                row
-                                                                    .getCells()[
-                                                                        15]
-                                                                    .value,
-                                                                inc.toString(),
-                                                                disc.toString(),
-                                                                disc_per
-                                                                    .toString(),
-                                                                amount
-                                                                    .toString(),
-                                                                total
-                                                                    .toString(),
-                                                                // row
-                                                                //     .getCells()[
-                                                                //          16]
-                                                                //     .value,
-                                                                // row
-                                                                //     .getCells()[
-                                                                //         17]
-                                                                //     .value,
-                                                                // row
-                                                                //     .getCells()[
-                                                                //         18]
-                                                                //     .value,
-                                                                // row
-                                                                //     .getCells()[
-                                                                //         19]
-                                                                //     .value,
-                                                              );
-                                                              setState(() {
-                                                                print(list);
-                                                                product
-                                                                    .add(list);
-
-                                                                // getnewProduct();
-                                                                productDataSource =
-                                                                    ProductDataSource(
-                                                                        product);
-                                                                Navigator.pop(
-                                                                    context);
-                                                              });
-
-                                                              List<TextEditingController>
-                                                                  _controllertextfield =
-                                                                  List.generate(
-                                                                      6,
-                                                                      (i) =>
-                                                                          TextEditingController());
-
-                                                              // print(row
-                                                              //     .getCells()[5]
-                                                              //     .value);
-                                                              _controllertextfield[
+                                                                //     product = [];
+                                                                dynamic inc =
+                                                                    (product.length) +
+                                                                        1;
+                                                                dynamic disc =
+                                                                    (product.length) +
+                                                                        1;
+                                                                dynamic
+                                                                    disc_per =
+                                                                    (product.length) +
+                                                                        1;
+                                                                dynamic amount =
+                                                                    (product.length) +
+                                                                        1;
+                                                                dynamic total =
+                                                                    (product.length) +
+                                                                        1;
+                                                                ProductInfo
+                                                                    list =
+                                                                    ProductInfo(
+                                                                  row
+                                                                      .getCells()[
                                                                           0]
-                                                                      .text =
+                                                                      .value,
                                                                   row
                                                                       .getCells()[
-                                                                          12]
-                                                                      .value
-                                                                      .toString();
-                                                              _controllertextfield[
+                                                                          1]
+                                                                      .value,
+                                                                  row
+                                                                      .getCells()[
                                                                           2]
-                                                                      .text =
+                                                                      .value,
                                                                   row
                                                                       .getCells()[
-                                                                          12]
-                                                                      .value
-                                                                      .toString();
-                                                              _controllertextfield[
+                                                                          3]
+                                                                      .value,
+                                                                  row
+                                                                      .getCells()[
+                                                                          4]
+                                                                      .value,
+                                                                  row
+                                                                      .getCells()[
                                                                           5]
-                                                                      .text =
+                                                                      .value,
+                                                                  row
+                                                                      .getCells()[
+                                                                          6]
+                                                                      .value,
+                                                                  row
+                                                                      .getCells()[
+                                                                          7]
+                                                                      .value,
+                                                                  row
+                                                                      .getCells()[
+                                                                          8]
+                                                                      .value,
+                                                                  row
+                                                                      .getCells()[
+                                                                          9]
+                                                                      .value,
+                                                                  row
+                                                                      .getCells()[
+                                                                          10]
+                                                                      .value,
+                                                                  row
+                                                                      .getCells()[
+                                                                          11]
+                                                                      .value,
                                                                   row
                                                                       .getCells()[
                                                                           12]
-                                                                      .value
-                                                                      .toString();
-                                                            },
-                                                            columns: <GridColumn>[
-                                                              GridColumn(
-                                                                visible: false,
-                                                                columnName:
-                                                                    'id',
-                                                                label:
-                                                                    const Text(
-                                                                        ''),
-                                                              ),
-                                                              GridColumn(
-                                                                visible: false,
-                                                                columnName:
-                                                                    'comp_id',
-                                                                label:
-                                                                    const Text(
-                                                                        ''),
-                                                              ),
-                                                              GridColumn(
-                                                                visible: false,
-                                                                columnName:
-                                                                    'stk_id',
-                                                                label:
-                                                                    const Text(
-                                                                        ''),
-                                                              ),
-                                                              GridColumn(
-                                                                visible: false,
-                                                                columnName:
-                                                                    'pur_id',
-                                                                label:
-                                                                    const Text(
-                                                                        ''),
-                                                              ),
-                                                              GridColumn(
-                                                                visible: false,
-                                                                columnName:
-                                                                    'sup_id',
-                                                                label:
-                                                                    const Text(
-                                                                        ''),
-                                                              ),
-                                                              GridColumn(
-                                                                columnName:
-                                                                    'p_name',
-                                                                label:
-                                                                    Container(
-                                                                  padding:
-                                                                      const EdgeInsets
-                                                                          .all(
-                                                                          16.0),
-                                                                  alignment:
-                                                                      Alignment
-                                                                          .centerLeft,
-                                                                  child: const Text(
-                                                                      'Products/Goods'),
-                                                                ),
-                                                              ),
-                                                              GridColumn(
-                                                                visible: false,
-                                                                columnName:
-                                                                    'p_id',
-                                                                label:
-                                                                    const Text(
-                                                                        ''),
-                                                              ),
-                                                              GridColumn(
-                                                                columnName:
-                                                                    'hsn',
-                                                                label:
-                                                                    Container(
-                                                                  padding:
-                                                                      const EdgeInsets
-                                                                          .all(
-                                                                          16.0),
-                                                                  alignment:
-                                                                      Alignment
-                                                                          .centerLeft,
-                                                                  child:
+                                                                      .value,
+                                                                  row
+                                                                      .getCells()[
+                                                                          13]
+                                                                      .value,
+                                                                  row
+                                                                      .getCells()[
+                                                                          14]
+                                                                      .value,
+                                                                  row
+                                                                      .getCells()[
+                                                                          15]
+                                                                      .value,
+                                                                  inc.toString(),
+                                                                  disc.toString(),
+                                                                  disc_per
+                                                                      .toString(),
+                                                                  amount
+                                                                      .toString(),
+                                                                  total
+                                                                      .toString(),
+                                                                  // row
+                                                                  //     .getCells()[
+                                                                  //          16]
+                                                                  //     .value,
+                                                                  // row
+                                                                  //     .getCells()[
+                                                                  //         17]
+                                                                  //     .value,
+                                                                  // row
+                                                                  //     .getCells()[
+                                                                  //         18]
+                                                                  //     .value,
+                                                                  // row
+                                                                  //     .getCells()[
+                                                                  //         19]
+                                                                  //     .value,
+                                                                );
+                                                                setState(() {
+                                                                  print(list);
+                                                                  product.add(
+                                                                      list);
+
+                                                                  // getnewProduct();
+                                                                  productDataSource =
+                                                                      ProductDataSource(
+                                                                          product);
+                                                                  Navigator.pop(
+                                                                      context);
+                                                                });
+
+                                                                List<TextEditingController>
+                                                                    _controllertextfield =
+                                                                    List.generate(
+                                                                        6,
+                                                                        (i) =>
+                                                                            TextEditingController());
+
+                                                                // print(row
+                                                                //     .getCells()[5]
+                                                                //     .value);
+                                                                _controllertextfield[
+                                                                            0]
+                                                                        .text =
+                                                                    row
+                                                                        .getCells()[
+                                                                            12]
+                                                                        .value
+                                                                        .toString();
+                                                                _controllertextfield[
+                                                                            2]
+                                                                        .text =
+                                                                    row
+                                                                        .getCells()[
+                                                                            12]
+                                                                        .value
+                                                                        .toString();
+                                                                _controllertextfield[
+                                                                            5]
+                                                                        .text =
+                                                                    row
+                                                                        .getCells()[
+                                                                            12]
+                                                                        .value
+                                                                        .toString();
+                                                              },
+                                                              columns: <GridColumn>[
+                                                                GridColumn(
+                                                                  visible:
+                                                                      false,
+                                                                  columnName:
+                                                                      'id',
+                                                                  label:
                                                                       const Text(
-                                                                          'HSN'),
+                                                                          ''),
                                                                 ),
-                                                              ),
-                                                              GridColumn(
-                                                                visible: false,
-                                                                columnName:
-                                                                    'inward',
-                                                                label:
-                                                                    const Text(
-                                                                        ''),
-                                                              ),
-                                                              GridColumn(
-                                                                visible: false,
-                                                                columnName:
-                                                                    'outward',
-                                                                label:
-                                                                    const Text(
-                                                                        ''),
-                                                              ),
-                                                              GridColumn(
-                                                                columnName:
-                                                                    'balance',
-                                                                label:
-                                                                    Container(
-                                                                  padding:
-                                                                      const EdgeInsets
-                                                                          .all(
-                                                                          16.0),
-                                                                  alignment:
-                                                                      Alignment
-                                                                          .centerLeft,
-                                                                  child: const Text(
-                                                                      'Available QTY'),
-                                                                ),
-                                                              ),
-                                                              GridColumn(
-                                                                columnName:
-                                                                    'u_name',
-                                                                label:
-                                                                    Container(
-                                                                  padding:
-                                                                      const EdgeInsets
-                                                                          .all(
-                                                                          16.0),
-                                                                  alignment:
-                                                                      Alignment
-                                                                          .centerLeft,
-                                                                  child:
+                                                                GridColumn(
+                                                                  visible:
+                                                                      false,
+                                                                  columnName:
+                                                                      'comp_id',
+                                                                  label:
                                                                       const Text(
-                                                                          'Unit'),
+                                                                          ''),
                                                                 ),
-                                                              ),
-                                                              GridColumn(
-                                                                columnName:
-                                                                    'price',
-                                                                label:
-                                                                    Container(
-                                                                  padding:
-                                                                      const EdgeInsets
-                                                                          .all(
-                                                                          16.0),
-                                                                  alignment:
-                                                                      Alignment
-                                                                          .centerLeft,
-                                                                  child: const Text(
-                                                                      'Price'),
+                                                                GridColumn(
+                                                                  visible:
+                                                                      false,
+                                                                  columnName:
+                                                                      'stk_id',
+                                                                  label:
+                                                                      const Text(
+                                                                          ''),
                                                                 ),
-                                                              ),
-                                                              GridColumn(
-                                                                columnName:
-                                                                    'sup_name',
-                                                                label:
-                                                                    Container(
-                                                                  padding:
-                                                                      const EdgeInsets
-                                                                          .all(
-                                                                          16.0),
-                                                                  alignment:
-                                                                      Alignment
-                                                                          .centerLeft,
-                                                                  child: const Text(
-                                                                      'Supplier'),
+                                                                GridColumn(
+                                                                  visible:
+                                                                      false,
+                                                                  columnName:
+                                                                      'pur_id',
+                                                                  label:
+                                                                      const Text(
+                                                                          ''),
                                                                 ),
-                                                              ),
-                                                              GridColumn(
-                                                                columnName:
-                                                                    'inv_no',
-                                                                label:
-                                                                    Container(
-                                                                  padding:
-                                                                      const EdgeInsets
-                                                                          .all(
-                                                                          16.0),
-                                                                  alignment:
-                                                                      Alignment
-                                                                          .centerLeft,
-                                                                  child: const Text(
-                                                                      'Invoice No'),
+                                                                GridColumn(
+                                                                  visible:
+                                                                      false,
+                                                                  columnName:
+                                                                      'sup_id',
+                                                                  label:
+                                                                      const Text(
+                                                                          ''),
                                                                 ),
-                                                              ),
-                                                              GridColumn(
-                                                                columnName:
-                                                                    'inv_date',
-                                                                label:
-                                                                    Container(
-                                                                  padding:
-                                                                      const EdgeInsets
-                                                                          .all(
-                                                                          16.0),
-                                                                  alignment:
-                                                                      Alignment
-                                                                          .centerLeft,
-                                                                  child: const Text(
-                                                                      'Invoice Date'),
+                                                                GridColumn(
+                                                                  columnName:
+                                                                      'p_name',
+                                                                  label:
+                                                                      Container(
+                                                                    padding:
+                                                                        const EdgeInsets
+                                                                            .all(
+                                                                            16.0),
+                                                                    alignment:
+                                                                        Alignment
+                                                                            .centerLeft,
+                                                                    child:
+                                                                        const Text(
+                                                                      'Products/Goods',
+                                                                      style: TextStyle(
+                                                                          color:
+                                                                              Colors.white),
+                                                                    ),
+                                                                  ),
                                                                 ),
-                                                              ),
-                                                            ],
+                                                                GridColumn(
+                                                                  visible:
+                                                                      false,
+                                                                  columnName:
+                                                                      'p_id',
+                                                                  label:
+                                                                      const Text(
+                                                                          ''),
+                                                                ),
+                                                                GridColumn(
+                                                                  columnName:
+                                                                      'hsn',
+                                                                  label:
+                                                                      Container(
+                                                                    padding:
+                                                                        const EdgeInsets
+                                                                            .all(
+                                                                            16.0),
+                                                                    alignment:
+                                                                        Alignment
+                                                                            .centerLeft,
+                                                                    child:
+                                                                        const Text(
+                                                                      'HSN',
+                                                                      style: TextStyle(
+                                                                          color:
+                                                                              Colors.white),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                GridColumn(
+                                                                  visible:
+                                                                      false,
+                                                                  columnName:
+                                                                      'inward',
+                                                                  label:
+                                                                      const Text(
+                                                                          ''),
+                                                                ),
+                                                                GridColumn(
+                                                                  visible:
+                                                                      false,
+                                                                  columnName:
+                                                                      'outward',
+                                                                  label:
+                                                                      const Text(
+                                                                          ''),
+                                                                ),
+                                                                GridColumn(
+                                                                  columnName:
+                                                                      'balance',
+                                                                  label:
+                                                                      Container(
+                                                                    padding:
+                                                                        const EdgeInsets
+                                                                            .all(
+                                                                            16.0),
+                                                                    alignment:
+                                                                        Alignment
+                                                                            .centerLeft,
+                                                                    child:
+                                                                        const Text(
+                                                                      'Available QTY',
+                                                                      style: TextStyle(
+                                                                          color:
+                                                                              Colors.white),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                GridColumn(
+                                                                  columnName:
+                                                                      'u_name',
+                                                                  label:
+                                                                      Container(
+                                                                    padding:
+                                                                        const EdgeInsets
+                                                                            .all(
+                                                                            16.0),
+                                                                    alignment:
+                                                                        Alignment
+                                                                            .centerLeft,
+                                                                    child:
+                                                                        const Text(
+                                                                      'Unit',
+                                                                      style: TextStyle(
+                                                                          color:
+                                                                              Colors.white),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                GridColumn(
+                                                                  columnName:
+                                                                      'price',
+                                                                  label:
+                                                                      Container(
+                                                                    padding:
+                                                                        const EdgeInsets
+                                                                            .all(
+                                                                            16.0),
+                                                                    alignment:
+                                                                        Alignment
+                                                                            .centerLeft,
+                                                                    child:
+                                                                        const Text(
+                                                                      'Price',
+                                                                      style: TextStyle(
+                                                                          color:
+                                                                              Colors.white),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                GridColumn(
+                                                                  columnName:
+                                                                      'sup_name',
+                                                                  label:
+                                                                      Container(
+                                                                    padding:
+                                                                        const EdgeInsets
+                                                                            .all(
+                                                                            16.0),
+                                                                    alignment:
+                                                                        Alignment
+                                                                            .centerLeft,
+                                                                    child:
+                                                                        const Text(
+                                                                      'Supplier',
+                                                                      style: TextStyle(
+                                                                          color:
+                                                                              Colors.white),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                GridColumn(
+                                                                  columnName:
+                                                                      'inv_no',
+                                                                  label:
+                                                                      Container(
+                                                                    padding:
+                                                                        const EdgeInsets
+                                                                            .all(
+                                                                            16.0),
+                                                                    alignment:
+                                                                        Alignment
+                                                                            .centerLeft,
+                                                                    child:
+                                                                        const Text(
+                                                                      'Invoice No',
+                                                                      style: TextStyle(
+                                                                          color:
+                                                                              Colors.white),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                GridColumn(
+                                                                  columnName:
+                                                                      'inv_date',
+                                                                  label:
+                                                                      Container(
+                                                                    padding:
+                                                                        const EdgeInsets
+                                                                            .all(
+                                                                            16.0),
+                                                                    alignment:
+                                                                        Alignment
+                                                                            .centerLeft,
+                                                                    child:
+                                                                        const Text(
+                                                                      'Invoice Date',
+                                                                      style: TextStyle(
+                                                                          color:
+                                                                              Colors.white),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
                                                           ),
                                                         ),
                                                       );
@@ -1492,207 +1554,269 @@ class _MyAppState extends State<salespage> {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(15.0),
-                              child: SfDataGrid(
-                                source: productDataSource,
-                                controller: _dataGridController,
-                                columns: <GridColumn>[
-                                  GridColumn(
-                                    visible: false,
-                                    columnName: 'id',
-                                    label: const Text(''),
-                                  ),
-                                  GridColumn(
-                                    visible: false,
-                                    columnName: 'comp_id',
-                                    label: const Text(''),
-                                  ),
-                                  GridColumn(
-                                    visible: false,
-                                    columnName: 'stk_id',
-                                    label: const Text(''),
-                                  ),
-                                  GridColumn(
-                                    visible: false,
-                                    columnName: 'pur_id',
-                                    label: const Text(''),
-                                  ),
-                                  GridColumn(
-                                    visible: false,
-                                    columnName: 'sup_id',
-                                    label: const Text(''),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'p_name',
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('Items'),
+                              child: SfDataGridTheme(
+                                data: SfDataGridThemeData(
+                                  headerColor:
+                                      const Color.fromRGBO(21, 83, 120, 1),
+                                  // rowHoverColor:
+                                  //     const Color.fromRGBO(166, 216, 245, 1),
+                                ),
+                                child: SfDataGrid(
+                                  source: productDataSource,
+                                  controller: _dataGridController,
+                                  columns: <GridColumn>[
+                                    GridColumn(
+                                      visible: false,
+                                      columnName: 'id',
+                                      label: const Text(''),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    visible: false,
-                                    columnName: 'p_id',
-                                    label: const Text(''),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'hsn',
-                                    visible: false,
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('HSN'),
+                                    GridColumn(
+                                      visible: false,
+                                      columnName: 'comp_id',
+                                      label: const Text(''),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    visible: false,
-                                    columnName: 'inward',
-                                    label: const Text(''),
-                                  ),
-                                  GridColumn(
-                                    visible: false,
-                                    columnName: 'outward',
-                                    label: const Text(''),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'balance',
-                                    visible: true,
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('Available QTY'),
+                                    GridColumn(
+                                      visible: false,
+                                      columnName: 'stk_id',
+                                      label: const Text(''),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'u_name',
-                                    visible: false,
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('Unit'),
+                                    GridColumn(
+                                      visible: false,
+                                      columnName: 'pur_id',
+                                      label: const Text(''),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'price',
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.center,
-                                      child: const Text('Rate'),
+                                    GridColumn(
+                                      visible: false,
+                                      columnName: 'sup_id',
+                                      label: const Text(''),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'sup_name',
-                                    visible: false,
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('Supplier'),
+                                    GridColumn(
+                                      columnName: 'p_name',
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'Items',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'inv_no',
-                                    visible: false,
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('Invoice No'),
+                                    GridColumn(
+                                      visible: false,
+                                      columnName: 'p_id',
+                                      label: const Text(''),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'inv_date',
-                                    visible: false,
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('Invoice Date'),
+                                    GridColumn(
+                                      columnName: 'hsn',
+                                      visible: false,
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'HSN',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'qty',
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('Qty'),
+                                    GridColumn(
+                                      visible: false,
+                                      columnName: 'inward',
+                                      label: const Text(''),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'txtqty',
-                                    visible: false,
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('TextQty'),
+                                    GridColumn(
+                                      visible: false,
+                                      columnName: 'outward',
+                                      label: const Text(''),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'amount',
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('Amount'),
+                                    GridColumn(
+                                      columnName: 'balance',
+                                      visible: true,
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'Available QTY',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'txtamount',
-                                    visible: false,
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('TextQty'),
+                                    GridColumn(
+                                      columnName: 'u_name',
+                                      visible: false,
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'Unit',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'disc',
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('Disc(%)'),
+                                    GridColumn(
+                                      columnName: 'price',
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.center,
+                                        child: const Text(
+                                          'Rate',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'txtdisc',
-                                    visible: false,
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('Disc(%)'),
+                                    GridColumn(
+                                      columnName: 'sup_name',
+                                      visible: false,
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'Supplier',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'disc_amount',
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('Disc_Amt'),
+                                    GridColumn(
+                                      columnName: 'inv_no',
+                                      visible: false,
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'Invoice No',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'txtdisc_per',
-                                    visible: false,
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('Disc_Amt'),
+                                    GridColumn(
+                                      columnName: 'inv_date',
+                                      visible: false,
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'Invoice Date',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'total',
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('Total'),
+                                    GridColumn(
+                                      columnName: 'qty',
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'Qty',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  GridColumn(
-                                    columnName: 'txt_total',
-                                    visible: false,
-                                    label: Container(
-                                      padding: const EdgeInsets.all(16.0),
-                                      alignment: Alignment.centerLeft,
-                                      child: const Text('TextQty'),
+                                    GridColumn(
+                                      columnName: 'txtqty',
+                                      visible: false,
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'TextQty',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  // productDataSource.addRow(rowData),
-                                ],
+                                    GridColumn(
+                                      columnName: 'amount',
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'Amount',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                    GridColumn(
+                                      columnName: 'txtamount',
+                                      visible: false,
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'TextQty',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                    GridColumn(
+                                      columnName: 'disc',
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'Disc(%)',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                    GridColumn(
+                                      columnName: 'txtdisc',
+                                      visible: false,
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'Disc(%)',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                    GridColumn(
+                                      columnName: 'disc_amount',
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'Disc_Amt',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                    GridColumn(
+                                      columnName: 'txtdisc_per',
+                                      visible: false,
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'Disc_Amt',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                    GridColumn(
+                                      columnName: 'total',
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'Total',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                    GridColumn(
+                                      columnName: 'txt_total',
+                                      visible: false,
+                                      label: Container(
+                                        padding: const EdgeInsets.all(16.0),
+                                        alignment: Alignment.centerLeft,
+                                        child: const Text(
+                                          'TextQty',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                    // productDataSource.addRow(rowData),
+                                  ],
+                                ),
                               ),
                             ),
                           ],
@@ -1785,7 +1909,10 @@ class _MyAppState extends State<salespage> {
                                                     .size
                                                     .width *
                                                 0.133,
-                                            height: 70,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.09,
                                             color: const Color.fromRGBO(
                                                 255, 187, 51, 1),
                                             child: const Padding(
@@ -1805,7 +1932,10 @@ class _MyAppState extends State<salespage> {
                                                       .size
                                                       .width *
                                                   0.133,
-                                              height: 70,
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.09,
                                               color: const Color.fromRGBO(
                                                   255, 187, 51, 1),
                                               child: const Padding(
@@ -1833,7 +1963,10 @@ class _MyAppState extends State<salespage> {
                                                     .size
                                                     .width *
                                                 0.128,
-                                            height: 35,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.05,
                                             child: Flexible(
                                               flex: 1,
                                               child: TextField(
@@ -1875,7 +2008,10 @@ class _MyAppState extends State<salespage> {
                                                     .size
                                                     .width *
                                                 0.128,
-                                            height: 35,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.05,
                                             child: Flexible(
                                               flex: 1,
                                               child: TextField(
@@ -1923,7 +2059,10 @@ class _MyAppState extends State<salespage> {
                                                     .size
                                                     .width *
                                                 0.128,
-                                            height: 35,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.05,
                                             child: Flexible(
                                               flex: 2,
                                               child: TextField(
@@ -1965,7 +2104,10 @@ class _MyAppState extends State<salespage> {
                                                     .size
                                                     .width *
                                                 0.128,
-                                            height: 35,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.05,
                                             child: Flexible(
                                               flex: 1,
                                               child: TextField(
@@ -2014,7 +2156,9 @@ class _MyAppState extends State<salespage> {
                                         width:
                                             MediaQuery.of(context).size.width *
                                                 0.128,
-                                        height: 35,
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                0.05,
                                         child: Flexible(
                                           flex: 2,
                                           child: TextField(
@@ -2048,7 +2192,9 @@ class _MyAppState extends State<salespage> {
                                         width:
                                             MediaQuery.of(context).size.width *
                                                 0.128,
-                                        height: 35,
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                0.05,
                                         child: Flexible(
                                           flex: 1,
                                           child: TextField(
@@ -2097,7 +2243,10 @@ class _MyAppState extends State<salespage> {
                                                         .size
                                                         .width *
                                                     0.132,
-                                                height: 40,
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.06,
                                                 child: const TextField(
                                                   keyboardType:
                                                       TextInputType.number,
@@ -2163,7 +2312,10 @@ class _MyAppState extends State<salespage> {
                                                         .size
                                                         .width *
                                                     0.132,
-                                                height: 50,
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.06,
                                                 color: const Color.fromARGB(
                                                     255, 236, 63, 77),
                                                 child: const Center(
@@ -2190,8 +2342,6 @@ class _MyAppState extends State<salespage> {
                                           color: Colors.green,
                                           onPressed: () {
                                             dynamic value = getAllRowData();
-                                            print(value);
-                                            print("value");
                                           },
                                           text: "Save & Print",
                                           fullWidthButton: true,

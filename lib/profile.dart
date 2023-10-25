@@ -105,7 +105,7 @@ class _ProfilepageState extends State<Profilepage> {
     super.initState();
     EasyLoading.show(status: 'loading...');
     getOrder();
-    Timer(Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 5), () {
       setState(() {
         usernamecontroller.text = userdata[6];
         emailcontroller.text = userdata[5] ?? '';

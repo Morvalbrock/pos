@@ -169,7 +169,7 @@ class _MyAppState extends State<InviceReport> {
                     padding: const EdgeInsets.all(10.0),
                     child: SingleChildScrollView(
                       child: SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.72,
+                        height: MediaQuery.of(context).size.height * 0.62,
                         child: SizedBox(
                             height: constraint.maxHeight - dataPagerHeight,
                             width: constraint.maxWidth,

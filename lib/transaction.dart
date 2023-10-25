@@ -112,13 +112,13 @@ class _MyAppState extends State<Transactionpage> {
         title: 'Paginated SfDataGrid',
         home: Scaffold(
           appBar: AppBar(
-            backgroundColor: Color.fromRGBO(236, 133, 36, 1),
-            title: Text('Transaction Page'),
+            backgroundColor: const Color.fromRGBO(236, 133, 36, 1),
+            title: const Text('Transaction Page'),
           ),
           drawer: Customdrawer(context),
           body: LayoutBuilder(builder: (context, constraint) {
             if (product.isEmpty) {
-              return SizedBox();
+              return const SizedBox();
             } else {
               return Column(
                 children: [
@@ -130,7 +130,7 @@ class _MyAppState extends State<Transactionpage> {
                           height: 40.0,
                           width: 150.0,
                           child: MaterialButton(
-                              color: Color.fromRGBO(72, 117, 146, 1),
+                              color: const Color.fromRGBO(72, 117, 146, 1),
                               onPressed: _exportDataGridToExcel,
                               child: const Center(
                                   child: Text(
@@ -153,313 +153,15 @@ class _MyAppState extends State<Transactionpage> {
                                 style: TextStyle(color: Colors.white),
                               ))),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         SizedBox(
                           height: 40.0,
                           width: 100.0,
                           child: Padding(
                             padding: const EdgeInsets.only(right: 10),
                             child: MaterialButton(
-                                color: Color.fromARGB(255, 68, 172, 71),
-                                onPressed: () {
-                                  showDialog(
-                                    context: context,
-                                    builder: (context) => AlertDialog(
-                                      title: Container(
-                                        child: Row(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Text(
-                                                  'ADD Customer',
-                                                ),
-                                              ],
-                                            ),
-                                            Spacer(),
-                                            IconButton(
-                                                onPressed: () {},
-                                                icon: Icon(Icons.close)),
-                                          ],
-                                        ),
-                                      ),
-                                      content: Container(
-                                        width: 500,
-                                        height: 400,
-                                        child: Column(
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Text('Name:'),
-                                                Spacer(),
-                                                Container(
-                                                    width: 300,
-                                                    child: TextField(
-                                                      decoration:
-                                                          InputDecoration(
-                                                              focusedBorder: OutlineInputBorder(
-                                                                  borderSide: BorderSide(
-                                                                      color: Color.fromARGB(
-                                                                          255,
-                                                                          243,
-                                                                          234,
-                                                                          234))),
-                                                              enabledBorder:
-                                                                  OutlineInputBorder(
-                                                                borderSide: BorderSide(
-                                                                    color: Color
-                                                                        .fromARGB(
-                                                                            255,
-                                                                            243,
-                                                                            234,
-                                                                            234)),
-                                                              ),
-                                                              hintText:
-                                                                  'Enter Name',
-                                                              hintStyle:
-                                                                  TextStyle(
-                                                                      fontSize:
-                                                                          15)),
-                                                    )),
-                                              ],
-                                            ),
-                                            Row(
-                                              children: [
-                                                Container(
-                                                  child: Text('Address:'),
-                                                ),
-                                                Spacer(),
-                                                Container(
-                                                    width: 300,
-                                                    child: TextField(
-                                                      decoration:
-                                                          InputDecoration(
-                                                              focusedBorder: OutlineInputBorder(
-                                                                  borderSide: BorderSide(
-                                                                      color: Color.fromARGB(
-                                                                          255,
-                                                                          243,
-                                                                          234,
-                                                                          234))),
-                                                              enabledBorder:
-                                                                  OutlineInputBorder(
-                                                                borderSide: BorderSide(
-                                                                    color: Color
-                                                                        .fromARGB(
-                                                                            255,
-                                                                            243,
-                                                                            234,
-                                                                            234)),
-                                                              ),
-                                                              hintText:
-                                                                  'Enter Address',
-                                                              hintStyle:
-                                                                  TextStyle(
-                                                                      fontSize:
-                                                                          15)),
-                                                    )),
-                                              ],
-                                            ),
-                                            Row(
-                                              children: [
-                                                Container(
-                                                  child: Text('Mobiles:'),
-                                                ),
-                                                Spacer(),
-                                                Container(
-                                                    width: 300,
-                                                    child: TextField(
-                                                      decoration:
-                                                          InputDecoration(
-                                                              focusedBorder: OutlineInputBorder(
-                                                                  borderSide: BorderSide(
-                                                                      color: Color.fromARGB(
-                                                                          255,
-                                                                          243,
-                                                                          234,
-                                                                          234))),
-                                                              enabledBorder:
-                                                                  OutlineInputBorder(
-                                                                borderSide: BorderSide(
-                                                                    color: Color
-                                                                        .fromARGB(
-                                                                            255,
-                                                                            243,
-                                                                            234,
-                                                                            234)),
-                                                              ),
-                                                              hintText:
-                                                                  'Enter Mobile',
-                                                              hintStyle:
-                                                                  TextStyle(
-                                                                      fontSize:
-                                                                          15)),
-                                                    )),
-                                              ],
-                                            ),
-                                            Row(
-                                              children: [
-                                                Container(
-                                                  child: Text('Email:'),
-                                                ),
-                                                Spacer(),
-                                                Container(
-                                                    width: 300,
-                                                    child: TextField(
-                                                      decoration:
-                                                          InputDecoration(
-                                                              focusedBorder: OutlineInputBorder(
-                                                                  borderSide: BorderSide(
-                                                                      color: Color.fromARGB(
-                                                                          255,
-                                                                          243,
-                                                                          234,
-                                                                          234))),
-                                                              enabledBorder:
-                                                                  OutlineInputBorder(
-                                                                borderSide: BorderSide(
-                                                                    color: Color
-                                                                        .fromARGB(
-                                                                            255,
-                                                                            243,
-                                                                            234,
-                                                                            234)),
-                                                              ),
-                                                              hintText:
-                                                                  'Enter Email',
-                                                              hintStyle:
-                                                                  TextStyle(
-                                                                      fontSize:
-                                                                          15)),
-                                                    )),
-                                              ],
-                                            ),
-                                            Row(
-                                              children: [
-                                                Container(
-                                                  child: Text('DOB:'),
-                                                ),
-                                                Spacer(),
-                                                Container(
-                                                    width: 300,
-                                                    child: TextField(
-                                                      decoration:
-                                                          InputDecoration(
-                                                              focusedBorder: OutlineInputBorder(
-                                                                  borderSide: BorderSide(
-                                                                      color: Color.fromARGB(
-                                                                          255,
-                                                                          243,
-                                                                          234,
-                                                                          234))),
-                                                              enabledBorder:
-                                                                  OutlineInputBorder(
-                                                                borderSide: BorderSide(
-                                                                    color: Color
-                                                                        .fromARGB(
-                                                                            255,
-                                                                            243,
-                                                                            234,
-                                                                            234)),
-                                                              ),
-                                                              hintText:
-                                                                  'Enter DOB',
-                                                              hintStyle:
-                                                                  TextStyle(
-                                                                      fontSize:
-                                                                          15)),
-                                                    )),
-                                              ],
-                                            ),
-                                            Row(
-                                              children: [
-                                                Container(
-                                                  child: Text('Details:'),
-                                                ),
-                                                Spacer(),
-                                                Container(
-                                                    width: 300,
-                                                    child: TextField(
-                                                      decoration:
-                                                          InputDecoration(
-                                                              focusedBorder: OutlineInputBorder(
-                                                                  borderSide: BorderSide(
-                                                                      color: Color.fromARGB(
-                                                                          255,
-                                                                          243,
-                                                                          234,
-                                                                          234))),
-                                                              enabledBorder:
-                                                                  OutlineInputBorder(
-                                                                borderSide: BorderSide(
-                                                                    color: Color
-                                                                        .fromARGB(
-                                                                            255,
-                                                                            243,
-                                                                            234,
-                                                                            234)),
-                                                              ),
-                                                              hintText:
-                                                                  'Enter Details',
-                                                              hintStyle:
-                                                                  TextStyle(
-                                                                      fontSize:
-                                                                          15)),
-                                                    )),
-                                              ],
-                                            ),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.end,
-                                              children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          right: 30, top: 20),
-                                                  child: Container(
-                                                    height: 30.0,
-                                                    width: 100.0,
-                                                    child: ElevatedButton(
-                                                      onPressed: () {},
-                                                      child: Text('SUBMIT'),
-                                                      style: ElevatedButton
-                                                          .styleFrom(
-                                                              primary: Color
-                                                                  .fromARGB(
-                                                                      255,
-                                                                      94,
-                                                                      214,
-                                                                      98)),
-                                                    ),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  width: 30.0,
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          right: 30, top: 20),
-                                                  child: Container(
-                                                    height: 30.0,
-                                                    width: 100.0,
-                                                    child: ElevatedButton(
-                                                      onPressed: () {},
-                                                      child: Text('CLOSE'),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            )
-                                          ],
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                },
+                                color: const Color.fromARGB(255, 68, 172, 71),
+                                onPressed: () {},
                                 child: const Center(
                                     child: Text(
                                   'ADD',
@@ -473,15 +175,17 @@ class _MyAppState extends State<Transactionpage> {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: SingleChildScrollView(
-                      child: Container(
-                        height: MediaQuery.of(context).size.height * 0.72,
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.62,
                         child: SizedBox(
                             height: constraint.maxHeight - dataPagerHeight,
                             width: constraint.maxWidth,
                             child: SfDataGridTheme(
                               data: SfDataGridThemeData(
-                                headerColor: Color.fromRGBO(21, 83, 120, 1),
-                                rowHoverColor: Color.fromRGBO(166, 216, 245, 1),
+                                headerColor:
+                                    const Color.fromRGBO(21, 83, 120, 1),
+                                rowHoverColor:
+                                    const Color.fromRGBO(166, 216, 245, 1),
                               ),
                               child: SfDataGrid(
                                   // https://help.syncfusion.com/flutter/datagrid/export-to-excel
@@ -516,19 +220,15 @@ class _MyAppState extends State<Transactionpage> {
                                                           .spaceEvenly,
                                                   children: [
                                                     IconButton(
-                                                        tooltip: 'View',
-                                                        onPressed: () {},
-                                                        icon: Icon(Icons
-                                                            .remove_red_eye)),
-                                                    IconButton(
                                                         tooltip: 'Edit',
                                                         onPressed: () {},
-                                                        icon: Icon(Icons.edit)),
+                                                        icon: const Icon(
+                                                            Icons.edit)),
                                                     IconButton(
                                                         tooltip: 'Delete',
                                                         onPressed: () {},
-                                                        icon:
-                                                            Icon(Icons.delete)),
+                                                        icon: const Icon(
+                                                            Icons.delete)),
                                                   ],
                                                 )));
                                   },
@@ -540,19 +240,19 @@ class _MyAppState extends State<Transactionpage> {
                                     GridColumn(
                                         columnName: 'id',
                                         visible: false,
-                                        label: Text('')),
+                                        label: const Text('')),
                                     GridColumn(
                                         columnName: 'comp_id',
                                         visible: false,
-                                        label: Text('')),
+                                        label: const Text('')),
                                     GridColumn(
                                       columnName: 'pay_id',
                                       // visible: false,
                                       allowEditing: true,
                                       label: Container(
-                                          padding: EdgeInsets.all(16.0),
+                                          padding: const EdgeInsets.all(16.0),
                                           alignment: Alignment.center,
-                                          child: Text(
+                                          child: const Text(
                                             'ID',
                                             style:
                                                 TextStyle(color: Colors.white),
@@ -563,9 +263,9 @@ class _MyAppState extends State<Transactionpage> {
                                       // visible: false,
                                       allowEditing: true,
                                       label: Container(
-                                          padding: EdgeInsets.all(16.0),
+                                          padding: const EdgeInsets.all(16.0),
                                           alignment: Alignment.center,
-                                          child: Text(
+                                          child: const Text(
                                             'Name',
                                             style:
                                                 TextStyle(color: Colors.white),
@@ -576,9 +276,9 @@ class _MyAppState extends State<Transactionpage> {
                                       // visible: false,
                                       allowEditing: true,
                                       label: Container(
-                                          padding: EdgeInsets.all(16.0),
+                                          padding: const EdgeInsets.all(16.0),
                                           alignment: Alignment.center,
-                                          child: Text(
+                                          child: const Text(
                                             'Payment Type',
                                             style:
                                                 TextStyle(color: Colors.white),
@@ -587,19 +287,19 @@ class _MyAppState extends State<Transactionpage> {
                                     GridColumn(
                                         columnName: 'acc_root',
                                         visible: false,
-                                        label: Text('')),
+                                        label: const Text('')),
                                     GridColumn(
                                         columnName: 'acc_id',
                                         visible: false,
-                                        label: Text('')),
+                                        label: const Text('')),
                                     GridColumn(
                                       columnName: 'pay_mode',
                                       // visible: false,
                                       allowEditing: true,
                                       label: Container(
-                                          padding: EdgeInsets.all(16.0),
+                                          padding: const EdgeInsets.all(16.0),
                                           alignment: Alignment.center,
-                                          child: Text(
+                                          child: const Text(
                                             'Payment Mode',
                                             style:
                                                 TextStyle(color: Colors.white),
@@ -608,21 +308,21 @@ class _MyAppState extends State<Transactionpage> {
                                     GridColumn(
                                         columnName: 'chq_no',
                                         visible: false,
-                                        label: Text('')),
+                                        label: const Text('')),
                                     GridColumn(
                                         columnName: 'chq_date',
                                         visible: false,
-                                        label: Text('')),
+                                        label: const Text('')),
                                     GridColumn(
                                         columnName: 'bank_name',
                                         visible: false,
-                                        label: Text('')),
+                                        label: const Text('')),
                                     GridColumn(
                                         columnName: 'pay_amount',
                                         label: Container(
-                                            padding: EdgeInsets.all(8.0),
+                                            padding: const EdgeInsets.all(8.0),
                                             alignment: Alignment.center,
-                                            child: Text(
+                                            child: const Text(
                                               'Amount',
                                               style: TextStyle(
                                                   color: Colors.white),
@@ -631,15 +331,15 @@ class _MyAppState extends State<Transactionpage> {
                                     GridColumn(
                                         columnName: 'pay_desc',
                                         visible: false,
-                                        label: Text('')),
+                                        label: const Text('')),
                                     GridColumn(
                                       columnName: 'pay_date',
                                       // visible: false,
                                       allowEditing: true,
                                       label: Container(
-                                          padding: EdgeInsets.all(16.0),
+                                          padding: const EdgeInsets.all(16.0),
                                           alignment: Alignment.center,
-                                          child: Text(
+                                          child: const Text(
                                             'Date',
                                             style:
                                                 TextStyle(color: Colors.white),
@@ -648,11 +348,11 @@ class _MyAppState extends State<Transactionpage> {
                                     GridColumn(
                                         columnName: 'create_at',
                                         visible: false,
-                                        label: Text('')),
+                                        label: const Text('')),
                                     GridColumn(
                                         columnName: 'updated_at',
                                         visible: false,
-                                        label: Text('')),
+                                        label: const Text('')),
                                   ]),
                             )),
                       ),
@@ -666,7 +366,8 @@ class _MyAppState extends State<Transactionpage> {
                           itemBorderWidth: 0.5,
                           itemBorderColor: Colors.grey.shade400,
                           itemBorderRadius: BorderRadius.circular(5),
-                          selectedItemColor: Color.fromRGBO(21, 83, 120, 1)),
+                          selectedItemColor:
+                              const Color.fromRGBO(21, 83, 120, 1)),
                       child: SfDataPager(
                         firstPageItemVisible: true,
                         lastPageItemVisible: true,
@@ -771,7 +472,7 @@ class OrderInfoDataSource extends DataGridSource {
         cells: row.getCells().map<Widget>((e) {
       return Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: Text(e.value.toString()),
       );
     }).toList());

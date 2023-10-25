@@ -192,7 +192,7 @@ class _MyAppState extends State<Staffpage> {
                     padding: const EdgeInsets.all(10.0),
                     child: SingleChildScrollView(
                       child: Container(
-                        height: MediaQuery.of(context).size.height * 0.72,
+                        height: MediaQuery.of(context).size.height * 0.62,
                         child: SizedBox(
                             height: constraint.maxHeight - dataPagerHeight,
                             width: constraint.maxWidth,

@@ -188,7 +188,7 @@ class _MyAppState extends State<Productpage> {
                     padding: const EdgeInsets.all(10.0),
                     child: SingleChildScrollView(
                       child: Container(
-                        height: MediaQuery.of(context).size.height * 0.72,
+                        height: MediaQuery.of(context).size.height * 0.62,
                         child: SizedBox(
                             height: constraint.maxHeight - dataPagerHeight,
                             width: constraint.maxWidth,
@@ -396,7 +396,7 @@ class _MyAppState extends State<Productpage> {
                                       label: Container(
                                           padding: EdgeInsets.all(16.0),
                                           alignment: Alignment.center,
-                                          child: Text(
+                                          child: const Text(
                                             'Id',
                                             style:
                                                 TextStyle(color: Colors.white),
