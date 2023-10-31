@@ -22,10 +22,10 @@ import 'package:flutter/material.dart';
 
 import 'package:syncfusion_flutter_core/theme.dart';
 
-final id = '';
+const id = '';
 final List<OrderInfo> product = [];
 List<OrderInfo> paginatedDataSource = [];
-final int rowsPerPage = 10;
+const int rowsPerPage = 10;
 
 late OrderInfoDataSource _productInfoDataSource;
 
@@ -297,7 +297,7 @@ class _MyAppState extends State<Productpage> {
                                                                           CrossAxisAlignment
                                                                               .start,
                                                                       children: [
-                                                                        Row(
+                                                                        const Row(
                                                                           children: [
                                                                             Text(
                                                                               'Delete Screen',
@@ -322,9 +322,9 @@ class _MyAppState extends State<Productpage> {
                                                                     child:
                                                                         Column(
                                                                       children: [
-                                                                        Text(
+                                                                        const Text(
                                                                             'Confirm you want delete the data'),
-                                                                        SizedBox(
+                                                                        const SizedBox(
                                                                           height:
                                                                               20.0,
                                                                         ),

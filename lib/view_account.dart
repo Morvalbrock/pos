@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class View_account extends StatefulWidget {
-  View_account({super.key, required Map<String, dynamic> this.accountInfo});
+  const View_account({super.key, required this.accountInfo});
   final Map<String, dynamic> accountInfo;
   @override
   State<View_account> createState() => _View_productState();
 }
 
+// ignore: camel_case_types
 class _View_productState extends State<View_account> {
   @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(236, 133, 36, 1),
-        title: Text(
+        backgroundColor: const Color.fromRGBO(236, 133, 36, 1),
+        title: const Text(
           'View Account Details',
           style: TextStyle(color: Colors.white),
         ),
@@ -23,14 +25,14 @@ class _View_productState extends State<View_account> {
         children: [
           Container(
             width: double.infinity,
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               top: 24.0,
             ),
             // alignment: Alignment.centerLeft,
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 34, right: 34.0),
+                  padding: const EdgeInsets.only(left: 34, right: 34.0),
                   child: Container(
                     color: Colors.white,
                     child: Padding(
@@ -45,7 +47,7 @@ class _View_productState extends State<View_account> {
                             children: [
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.30,
-                                child: Text(
+                                child: const Text(
                                   'Account Root',
                                   style: TextStyle(
                                     color: Color(0xFF303030),
@@ -60,7 +62,7 @@ class _View_productState extends State<View_account> {
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 child: Text(
                                   widget.accountInfo['acc_root'].toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFF183BB7),
                                     fontSize: 18,
                                     fontFamily: 'Poppins',
@@ -69,31 +71,27 @@ class _View_productState extends State<View_account> {
                                   ),
                                 ),
                               ),
-                              Container(
-                                child: SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.10,
-                                  child: Row(
-                                    children: [
-                                      IconButton(
-                                          onPressed: () {},
-                                          icon: Icon(
-                                            Icons.edit_note_sharp,
-                                            size: 25,
-                                          )),
-                                      SizedBox(
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.02,
-                                      ),
-                                      IconButton(
-                                          onPressed: () {},
-                                          icon: Icon(
-                                            Icons.delete,
-                                            size: 25,
-                                          )),
-                                    ],
-                                  ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.10,
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(
+                                          Icons.edit_note_sharp,
+                                          size: 25,
+                                        )),
+                                    SizedBox(
+                                      width: MediaQuery.of(context).size.width *
+                                          0.02,
+                                    ),
+                                    IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(
+                                          Icons.delete,
+                                          size: 25,
+                                        )),
+                                  ],
                                 ),
                               )
                             ],
@@ -107,7 +105,7 @@ class _View_productState extends State<View_account> {
                             children: [
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.30,
-                                child: Text(
+                                child: const Text(
                                   'Account Name',
                                   style: TextStyle(
                                     color: Color(0xFF303030),
@@ -122,7 +120,7 @@ class _View_productState extends State<View_account> {
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 child: Text(
                                   widget.accountInfo['acc_name'].toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFF183BB7),
                                     fontSize: 18,
                                     fontFamily: 'Poppins',
@@ -145,7 +143,7 @@ class _View_productState extends State<View_account> {
                             children: [
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.30,
-                                child: Text(
+                                child: const Text(
                                   'Account Status',
                                   style: TextStyle(
                                     color: Color(0xFF303030),
@@ -160,7 +158,7 @@ class _View_productState extends State<View_account> {
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 child: Text(
                                   widget.accountInfo['acc_status'].toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFF183BB7),
                                     fontSize: 18,
                                     fontFamily: 'Poppins',

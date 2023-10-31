@@ -264,7 +264,7 @@ class _HomepageState extends State<Homepage> {
                             ),
                             const Spacer(),
                             Padding(
-                              padding: EdgeInsets.only(right: 20.0),
+                              padding: const EdgeInsets.only(right: 20.0),
                               child: Text(
                                 overall_Invice,
                                 style: const TextStyle(
@@ -310,7 +310,7 @@ class _HomepageState extends State<Homepage> {
                       Container(
                         padding: const EdgeInsets.only(bottom: 5.0),
                         color: Colors.white,
-                        height: MediaQuery.of(context).size.width * 0.31,
+                        height: MediaQuery.of(context).size.height * 0.55,
                         width: MediaQuery.of(context).size.width * 0.58,
                         child: MyBarGraph(
                           yearSummar: yearlySummary,
@@ -329,7 +329,7 @@ class _HomepageState extends State<Homepage> {
                   elevation: 2.0,
                   child: Container(
                     color: Colors.white,
-                    height: MediaQuery.of(context).size.width * 0.36,
+                    height: MediaQuery.of(context).size.height * 0.63,
                     width: MediaQuery.of(context).size.width * 0.38,
                     child: My_Piechart(),
                   ),

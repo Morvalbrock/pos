@@ -231,9 +231,9 @@ Widget SalesTextfield(String fld, double width, dynamic _controllertext,
     controller: controller,
     decoration: InputDecoration(
       hintText: htxt,
-      focusedBorder: OutlineInputBorder(
+      focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: Color.fromARGB(255, 243, 234, 234))),
-      enabledBorder: OutlineInputBorder(
+      enabledBorder: const OutlineInputBorder(
         borderSide: BorderSide(color: Color.fromARGB(255, 243, 234, 234)),
       ),
     ),
@@ -367,14 +367,14 @@ Widget ClosingTextfield(
         decoration: InputDecoration(
             fillColor: Colors.white,
             filled: true,
-            focusedBorder: OutlineInputBorder(
+            focusedBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Color.fromARGB(255, 243, 234, 234)),
             ),
-            enabledBorder: OutlineInputBorder(
+            enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Color.fromARGB(255, 243, 234, 234)),
             ),
             hintText: htxt,
-            hintStyle: TextStyle(fontSize: 15, color: Colors.black)),
+            hintStyle: const TextStyle(fontSize: 15, color: Colors.black)),
         onChanged: (value) {
           var Pcs1 = _pcs[0].text;
           var Pcs2 = _pcs[1].text;

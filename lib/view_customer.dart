@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class View_customer extends StatefulWidget {
-  View_customer({super.key, required Map<String, dynamic> this.customerInfo});
+  const View_customer({super.key, required this.customerInfo});
   final Map<String, dynamic> customerInfo;
   @override
   State<View_customer> createState() => _View_productState();
 }
 
+// ignore: camel_case_types
 class _View_productState extends State<View_customer> {
   @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(236, 133, 36, 1),
-        title: Text(
+        backgroundColor: const Color.fromRGBO(236, 133, 36, 1),
+        title: const Text(
           'View Customer Details',
           style: TextStyle(color: Colors.white),
         ),
@@ -23,14 +25,14 @@ class _View_productState extends State<View_customer> {
         children: [
           Container(
             width: double.infinity,
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               top: 24.0,
             ),
             // alignment: Alignment.centerLeft,
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 34, right: 34.0),
+                  padding: const EdgeInsets.only(left: 34, right: 34.0),
                   child: Container(
                     color: Colors.white,
                     child: Padding(
@@ -45,7 +47,7 @@ class _View_productState extends State<View_customer> {
                             children: [
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.30,
-                                child: Text(
+                                child: const Text(
                                   'Customer Name',
                                   style: TextStyle(
                                     color: Color(0xFF303030),
@@ -71,7 +73,7 @@ class _View_productState extends State<View_customer> {
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 child: Text(
                                   widget.customerInfo['cus_name'].toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFF183BB7),
                                     fontSize: 18,
                                     fontFamily: 'Poppins',
@@ -80,31 +82,27 @@ class _View_productState extends State<View_customer> {
                                   ),
                                 ),
                               ),
-                              Container(
-                                child: SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.10,
-                                  child: Row(
-                                    children: [
-                                      IconButton(
-                                          onPressed: () {},
-                                          icon: Icon(
-                                            Icons.edit_note_sharp,
-                                            size: 25,
-                                          )),
-                                      SizedBox(
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.02,
-                                      ),
-                                      IconButton(
-                                          onPressed: () {},
-                                          icon: Icon(
-                                            Icons.delete,
-                                            size: 25,
-                                          )),
-                                    ],
-                                  ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.10,
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(
+                                          Icons.edit_note_sharp,
+                                          size: 25,
+                                        )),
+                                    SizedBox(
+                                      width: MediaQuery.of(context).size.width *
+                                          0.02,
+                                    ),
+                                    IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(
+                                          Icons.delete,
+                                          size: 25,
+                                        )),
+                                  ],
                                 ),
                               )
                             ],
@@ -118,7 +116,7 @@ class _View_productState extends State<View_customer> {
                             children: [
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.30,
-                                child: Text(
+                                child: const Text(
                                   'Customer Address',
                                   style: TextStyle(
                                     color: Color(0xFF303030),
@@ -133,7 +131,7 @@ class _View_productState extends State<View_customer> {
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 child: Text(
                                   widget.customerInfo['cus_adderss'].toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFF183BB7),
                                     fontSize: 18,
                                     fontFamily: 'Poppins',
@@ -156,7 +154,7 @@ class _View_productState extends State<View_customer> {
                             children: [
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.30,
-                                child: Text(
+                                child: const Text(
                                   'Customer Mobile',
                                   style: TextStyle(
                                     color: Color(0xFF303030),
@@ -171,7 +169,7 @@ class _View_productState extends State<View_customer> {
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 child: Text(
                                   widget.customerInfo['cus_mobile'].toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFF183BB7),
                                     fontSize: 18,
                                     fontFamily: 'Poppins',
@@ -182,7 +180,7 @@ class _View_productState extends State<View_customer> {
                               ),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.10,
-                                child: Align(heightFactor: 0.6),
+                                child: const Align(heightFactor: 0.6),
                               )
                             ],
                           ),
@@ -195,7 +193,7 @@ class _View_productState extends State<View_customer> {
                             children: [
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.30,
-                                child: Text(
+                                child: const Text(
                                   'Customer Email',
                                   style: TextStyle(
                                     color: Color(0xFF303030),
@@ -210,7 +208,7 @@ class _View_productState extends State<View_customer> {
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 child: Text(
                                   widget.customerInfo['cus_email'].toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFF183BB7),
                                     fontSize: 18,
                                     fontFamily: 'Poppins',
@@ -221,7 +219,7 @@ class _View_productState extends State<View_customer> {
                               ),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.10,
-                                child: Align(heightFactor: 0.6),
+                                child: const Align(heightFactor: 0.6),
                               )
                             ],
                           ),
@@ -234,7 +232,7 @@ class _View_productState extends State<View_customer> {
                             children: [
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.30,
-                                child: Text(
+                                child: const Text(
                                   'Customer DOB',
                                   style: TextStyle(
                                     color: Color(0xFF303030),
@@ -249,7 +247,7 @@ class _View_productState extends State<View_customer> {
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 child: Text(
                                   widget.customerInfo['sup_dob'].toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFF183BB7),
                                     fontSize: 18,
                                     fontFamily: 'Poppins',
@@ -260,7 +258,7 @@ class _View_productState extends State<View_customer> {
                               ),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.10,
-                                child: Align(heightFactor: 0.6),
+                                child: const Align(heightFactor: 0.6),
                               )
                             ],
                           ),
@@ -273,7 +271,7 @@ class _View_productState extends State<View_customer> {
                             children: [
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.30,
-                                child: Text(
+                                child: const Text(
                                   'Customer Details',
                                   style: TextStyle(
                                     color: Color(0xFF303030),
@@ -288,7 +286,7 @@ class _View_productState extends State<View_customer> {
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 child: Text(
                                   widget.customerInfo['cus_details'].toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFF183BB7),
                                     fontSize: 18,
                                     fontFamily: 'Poppins',
@@ -299,7 +297,7 @@ class _View_productState extends State<View_customer> {
                               ),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.10,
-                                child: Align(heightFactor: 0.6),
+                                child: const Align(heightFactor: 0.6),
                               )
                             ],
                           ),

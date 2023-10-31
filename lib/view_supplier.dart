@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class View_supplier extends StatefulWidget {
-  View_supplier({super.key, required Map<String, dynamic> this.supplierInfo});
+  const View_supplier({super.key, required this.supplierInfo});
   final Map<String, dynamic> supplierInfo;
   @override
   State<View_supplier> createState() => _View_productState();
 }
 
+// ignore: camel_case_types
 class _View_productState extends State<View_supplier> {
   @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(236, 133, 36, 1),
-        title: Text(
+        backgroundColor: const Color.fromRGBO(236, 133, 36, 1),
+        title: const Text(
           'View Supplier Details',
           style: TextStyle(color: Colors.white),
         ),
@@ -23,14 +25,14 @@ class _View_productState extends State<View_supplier> {
         children: [
           Container(
             width: double.infinity,
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               top: 24.0,
             ),
             // alignment: Alignment.centerLeft,
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 34, right: 34.0),
+                  padding: const EdgeInsets.only(left: 34, right: 34.0),
                   child: Container(
                     color: Colors.white,
                     child: Padding(
@@ -62,7 +64,7 @@ class _View_productState extends State<View_supplier> {
                               // this.update_at,
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.30,
-                                child: Text(
+                                child: const Text(
                                   'Supplier Name',
                                   style: TextStyle(
                                     color: Color(0xFF303030),
@@ -77,7 +79,7 @@ class _View_productState extends State<View_supplier> {
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 child: Text(
                                   widget.supplierInfo['sup_name'].toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFF183BB7),
                                     fontSize: 18,
                                     fontFamily: 'Poppins',
@@ -86,31 +88,27 @@ class _View_productState extends State<View_supplier> {
                                   ),
                                 ),
                               ),
-                              Container(
-                                child: SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.10,
-                                  child: Row(
-                                    children: [
-                                      IconButton(
-                                          onPressed: () {},
-                                          icon: Icon(
-                                            Icons.edit_note_sharp,
-                                            size: 25,
-                                          )),
-                                      SizedBox(
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.02,
-                                      ),
-                                      IconButton(
-                                          onPressed: () {},
-                                          icon: Icon(
-                                            Icons.delete,
-                                            size: 25,
-                                          )),
-                                    ],
-                                  ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.10,
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(
+                                          Icons.edit_note_sharp,
+                                          size: 25,
+                                        )),
+                                    SizedBox(
+                                      width: MediaQuery.of(context).size.width *
+                                          0.02,
+                                    ),
+                                    IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(
+                                          Icons.delete,
+                                          size: 25,
+                                        )),
+                                  ],
                                 ),
                               )
                             ],
@@ -124,7 +122,7 @@ class _View_productState extends State<View_supplier> {
                             children: [
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.30,
-                                child: Text(
+                                child: const Text(
                                   'Supplier Address',
                                   style: TextStyle(
                                     color: Color(0xFF303030),
@@ -139,7 +137,7 @@ class _View_productState extends State<View_supplier> {
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 child: Text(
                                   widget.supplierInfo['sup_adderss'].toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFF183BB7),
                                     fontSize: 18,
                                     fontFamily: 'Poppins',
@@ -162,7 +160,7 @@ class _View_productState extends State<View_supplier> {
                             children: [
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.30,
-                                child: Text(
+                                child: const Text(
                                   'Supplier Mobile',
                                   style: TextStyle(
                                     color: Color(0xFF303030),
@@ -177,7 +175,7 @@ class _View_productState extends State<View_supplier> {
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 child: Text(
                                   widget.supplierInfo['sup_mobile'].toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFF183BB7),
                                     fontSize: 18,
                                     fontFamily: 'Poppins',
@@ -188,7 +186,7 @@ class _View_productState extends State<View_supplier> {
                               ),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.10,
-                                child: Align(heightFactor: 0.6),
+                                child: const Align(heightFactor: 0.6),
                               )
                             ],
                           ),
@@ -201,7 +199,7 @@ class _View_productState extends State<View_supplier> {
                             children: [
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.30,
-                                child: Text(
+                                child: const Text(
                                   'Supplier Email',
                                   style: TextStyle(
                                     color: Color(0xFF303030),
@@ -216,7 +214,7 @@ class _View_productState extends State<View_supplier> {
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 child: Text(
                                   widget.supplierInfo['sup_email'].toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFF183BB7),
                                     fontSize: 18,
                                     fontFamily: 'Poppins',
@@ -227,7 +225,7 @@ class _View_productState extends State<View_supplier> {
                               ),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.10,
-                                child: Align(heightFactor: 0.6),
+                                child: const Align(heightFactor: 0.6),
                               )
                             ],
                           ),
@@ -240,7 +238,7 @@ class _View_productState extends State<View_supplier> {
                             children: [
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.30,
-                                child: Text(
+                                child: const Text(
                                   'Supplier GST',
                                   style: TextStyle(
                                     color: Color(0xFF303030),
@@ -255,7 +253,7 @@ class _View_productState extends State<View_supplier> {
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 child: Text(
                                   widget.supplierInfo['sup_gst'].toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFF183BB7),
                                     fontSize: 18,
                                     fontFamily: 'Poppins',
@@ -266,7 +264,7 @@ class _View_productState extends State<View_supplier> {
                               ),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.10,
-                                child: Align(heightFactor: 0.6),
+                                child: const Align(heightFactor: 0.6),
                               )
                             ],
                           ),
@@ -279,7 +277,7 @@ class _View_productState extends State<View_supplier> {
                             children: [
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.30,
-                                child: Text(
+                                child: const Text(
                                   'Supplier Details',
                                   style: TextStyle(
                                     color: Color(0xFF303030),
@@ -294,7 +292,7 @@ class _View_productState extends State<View_supplier> {
                                 width: MediaQuery.of(context).size.width * 0.40,
                                 child: Text(
                                   widget.supplierInfo['sup_details'].toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Color(0xFF183BB7),
                                     fontSize: 18,
                                     fontFamily: 'Poppins',
@@ -305,7 +303,7 @@ class _View_productState extends State<View_supplier> {
                               ),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.10,
-                                child: Align(heightFactor: 0.6),
+                                child: const Align(heightFactor: 0.6),
                               )
                             ],
                           ),
